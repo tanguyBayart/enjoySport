@@ -65,6 +65,10 @@ export class AppComponent {
   cheminIcone_I8 = '../assets/images/icons8.png';
   i8Href = "http://icons8.com/";
 
+  //github
+  cheminIcone_GH = '../assets/images/github.png';
+  GhHref = "https://github.com/tanguyBayart/enjoySport";
+
 
 
 
