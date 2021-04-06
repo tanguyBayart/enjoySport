@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "enjoysport-e6d57"
+  },
+  "targets": {
+    "enjoysport-e6d57": {
+      "hosting": {
+        "enjoySport": [
+          "enjoysport-e6d57"
+        ]
+      }
+    }
+  }
+}

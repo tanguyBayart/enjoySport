@@ -1,0 +1,36 @@
+<div class="content" role="main">
+
+  <div id="bigtitle">{{training_type}}</div>
+
+  <br/><br/>
+  <div width = 100% >
+      <img
+        width="50"
+        src="{{cheminIcone_build}}"/>
+          Site en construction !
+        <img
+          width="50"
+          src="{{cheminIcone_build}}"/>
+  </div>
+  <br/>
+
+    <b>{{training_todo}}</b>
+    <ul>
+        <li *ngFor="let training_todo of training_todo_tab">
+          {{training_todo}}
+        </li>
+    </ul>
+
+    <div>
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+        </canvas>
+    </div>
+
+
+
+</div>

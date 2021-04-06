@@ -1,0 +1,32 @@
+<div class="content" role="main">
+
+  <div id="bigtitle">{{news_title}}</div>
+
+
+  <br/><br/>
+       <b>NB : le tableau ci dessous représente les données receuillies par l'appel d'un webservice.</b>
+        <b>Auncun traitement n'est appliqué sur la réponse.</b>
+  <br/><br/>
+  
+
+
+      <!-- <table border="1"> -->
+      <table class="blueTable">
+        <tr *ngFor = 'let resultat of resultats'>
+          <td><a href="{{resultat.url}}" target ="_blank"><img width="100" src="{{resultat.image}}" /></a></td>
+          <td><a href="{{resultat.url}}" target ="_blank"><b>{{resultat.title}}</b> </a> - <i>{{resultat.published_at | date :'dd/MM/yyyy'}} - {{resultat.source}}</i><br>{{resultat.description | slice :0 :250}}...</td>
+        </tr>
+        <tr><td colspan="2" align="center">
+          <button (click)="previous()" class="links"
+            [disabled]="isPreviousdisabled">Précédent</button>
+          <button (click)="next()" class="links">Suivant</button>
+        </td></tr>
+      </table>
+
+
+
+
+<br><b>API proposée par <a href={{url_mediastack}} target="_blank">Media Stack</a></b><br>
+
+
+</div>
