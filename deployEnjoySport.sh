@@ -5,7 +5,7 @@ echo "### deployEnjoySport.sh - `date` - Lancement du déploiement de EnjoySport
 # récupération des sources
 echo "### deployEnjoySport.sh - `date` - récupération de sources"
 cd /home/ec2-user/enjoySportRepo/
-git pull https://github.com/tanguyBayart/enjoySport.git master
+git pull https://github.com/tanguyBayart/enjoySport.git main
 echo "### deployEnjoySport.sh - `date` - sources récupérées"
 
 #build
