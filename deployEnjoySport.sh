@@ -14,7 +14,7 @@ echo "### deployEnjoySport.sh - `date` - sources récupérées"
 # modification de welcome-view.component.html
 dateD=`date +"%Y-%m-%d %H:%m"`
 echo "### deployEnjoySport.sh - `date` - date de déploiement : " $dateD
-echo "### deployEnjoySport.sh - `date` - date de déploiement : version = $1
+echo "### deployEnjoySport.sh - `date` - date de déploiement : version =" $1
 
 sed "s/==dateyyyymmddHHmmss==/${dateD}/g" ./src/app/welcome-view.html >| ./src/app/welcome-view.html.tmp1
 sed "s/==versionDev==/${1}/g" ./src/app/welcome-view.html.tmp1 >| ./src/app/welcome-view.html.tmp2
