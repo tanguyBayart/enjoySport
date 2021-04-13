@@ -21,6 +21,7 @@ sed "s/==versionDev==/${1}/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view
 mv /home/ec2-user/enjoySportRepo/src/app/welcome-view.html.tmp2 /home/ec2-user/enjoySportRepo/src/app/welcome-view.html
 
 
+
 # build
 echo "### deployEnjoySport.sh - `date` - Génération du livrable"
 ng build
