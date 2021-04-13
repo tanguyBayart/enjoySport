@@ -16,9 +16,9 @@ dateD=`date +"%Y-%m-%d %H:%m"`
 echo "### deployEnjoySport.sh - `date` - date de déploiement : " $dateD
 echo "### deployEnjoySport.sh - `date` - date de déploiement : version =" $1
 
-sed "s/==dateyyyymmddHHmmss==/${dateD}/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view.html >| /home/ec2-user/enjoySportRepo/src/app/welcome-view.html.tmp1
-sed "s/==versionDev==/${1}/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view.html.tmp1 >| /home/ec2-user/enjoySportRepo/src/app/welcome-view.html.tmp2
-mv /home/ec2-user/enjoySportRepo/src/app/welcome-view.html.tmp2 /home/ec2-user/enjoySportRepo/src/app/welcome-view.html
+sed "s/==dateyyyymmddHHmmss==/${dateD}/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html >| /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp1
+sed "s/==versionDev==/${1}/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp1 >| /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp2
+mv /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp2 /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html
 
 
 
