@@ -1,8 +1,5 @@
 #! /bin/sh
 
-
-
-
 echo "### deployEnjoySport.sh - `date` - Lancement du déploiement de EnjoySport"
 
 # récupération des sources
