@@ -9,7 +9,7 @@ git pull https://github.com/tanguyBayart/enjoySport.git main
 echo "### deployEnjoySport.sh - `date` - sources récupérées"
 
 # modification de welcome-view.component.html
-dateD=`date +"%Y-%m-%d %H:%M"`
+dateD=`date +"%Y-%m-%d %H:%M"` 
 echo "### deployEnjoySport.sh - `date` - date de déploiement : " $dateD
 echo "### deployEnjoySport.sh - `date` - date de déploiement : version =" $1
 
