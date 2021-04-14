@@ -19,7 +19,6 @@ sed "s/==versionDev==/$1/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view/w
 mv /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp2 /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html
 
 
-
 # build
 echo "### deployEnjoySport.sh - `date` - Génération du livrable"
 ng build
