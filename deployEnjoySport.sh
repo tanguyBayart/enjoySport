@@ -11,11 +11,13 @@ echo "### deployEnjoySport.sh - `date` - sources récupérées"
 
 # modification de welcome-view.component.html
 dateD=`date +"%Y-%m-%d %H:%M"`
+VERSION=`grep version package.json  | cut -d "\"" -f4`
+
 echo "### deployEnjoySport.sh - `date` - date de déploiement : " $dateD
 echo "### deployEnjoySport.sh - `date` - date de déploiement : version =" $1
 
 sed "s/==dateyyyymmddHHmmss==/${dateD}/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html >| /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp1
-sed "s/==versionDev==/$1/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp1 >| /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp2
+sed "s/==versionDev==/$VERSION/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp1 >| /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp2
 mv /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp2 /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html
 
 
