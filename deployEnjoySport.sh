@@ -1,5 +1,5 @@
 #! /bin/sh
-
+TZ='Europe/Paris';
 echo "### deployEnjoySport.sh - `date` - Lancement du déploiement de EnjoySport"
 
 # récupération des sources
