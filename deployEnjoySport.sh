@@ -23,7 +23,7 @@ mv /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.htm
 
 # build
 echo "### deployEnjoySport.sh - `date` - Génération du livrable"
-ng build
+/home/ec2-user/.nvm/versions/node/v15.14.0/bin/ng build
 echo "### deployEnjoySport.sh - `date` - Livrable généré"
 
 # nettoyage/déploiement
