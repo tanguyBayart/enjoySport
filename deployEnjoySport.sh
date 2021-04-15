@@ -20,7 +20,7 @@ sed "s/==dateyyyymmddHHmmss==/${dateD}/g" /home/ec2-user/enjoySportRepo/src/app/
 sed "s/==versionDev==/$VERSION/g" /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp1 >| /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp2
 mv /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html.tmp2 /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.html
 
-
+node = "/home/ec2-user/.nvm/versions/node/v15.14.0/bin/node"
 # build
 echo "### deployEnjoySport.sh - `date` - Génération du livrable"
 /home/ec2-user/.nvm/versions/node/v15.14.0/bin/ng build
