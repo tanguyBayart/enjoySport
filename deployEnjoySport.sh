@@ -24,6 +24,13 @@ mv /home/ec2-user/enjoySportRepo/src/app/welcome-view/welcome-view.component.htm
 # build
 echo "### deployEnjoySport.sh - `date` - Génération du livrable"
 /home/ec2-user/.nvm/versions/node/v15.14.0/bin/ng build
+
+if [[ $? -ne 0 ]]
+then
+        echo "### deployEnjoySport.sh - `date` - ng duild failed !!"
+        exit -1;
+fi
+
 echo "### deployEnjoySport.sh - `date` - Livrable généré"
 
 # nettoyage/déploiement
