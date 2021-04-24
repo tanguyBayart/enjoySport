@@ -27,7 +27,7 @@ echo "### deployEnjoySport.sh - `date` - Génération du livrable"
 
 if [[ $? -ne 0 ]]
 then
-        echo "### deployEnjoySport.sh - `date` - ng duild failed !!"
+        echo "### deployEnjoySport.sh - `date` - ng build failed !!"
         exit -1;
 fi
 
