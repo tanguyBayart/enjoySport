@@ -8,8 +8,6 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 
-
-
 import { TrainingViewComponent } from './training-view/training-view.component';
 import { WelcomeViewComponent } from './welcome-view/welcome-view.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -23,34 +21,18 @@ import { CommonModule } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
 
-
 //firebase imports
-import { AngularFireModule } from "@angular/fire";
+import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 // import { MatToolbarModule } from '@angular/material/toolbar';
 // import { MatIconModule } from '@angular/material/icon';
 
-
 // Charts
 import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-const appRoutes: Routes = [
-  // { path: 'auth/signup', component: SignupComponent },
-  // { path: 'auth/signin', component: SigninComponent },
-  { path: 'home', component: WelcomeViewComponent },
-  // { path: 'connect', component: SignupComponent },
-  { path: 'connect', component: AuthComponent },
-  { path: 'muscu', component: TrainingViewComponent },
-  { path: 'cardio', component: TrainingViewComponent },
-  { path: 'news', component: NewsComponent },
-  { path: '', component: WelcomeViewComponent }
-
-];
-
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -60,23 +42,22 @@ const appRoutes: Routes = [
     WelcomeViewComponent,
     SignupComponent,
     SigninComponent,
-    NewsComponent
+    NewsComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes, {scrollPositionRestoration: 'enabled'}),
+    RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'enabled' }),
     HttpClientModule,
     ChartsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     // MatToolbarModule,
     // MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
-  providers: [AuthService,
-    AuthGuardService],
-  bootstrap: [AppComponent]
+  providers: [AuthService, AuthGuardService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
