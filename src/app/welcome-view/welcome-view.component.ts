@@ -18,6 +18,10 @@ export class WelcomeViewComponent implements OnInit {
   cheminIcone_aws= '../assets/images/icone_aws.png';
   awsHref = 'https://www.google.com/aclk?sa=L&ai=DChcSEwj0_dzOua_tAhXEhNUKHeRwA4UYABAAGgJ3cw&ae=2&sig=AOD64_0qqp-W2xMtP9COYR6tM-sACVPDpQ&q&adurl&ved=2ahUKEwiJktXOua_tAhWlDGMBHcKZDccQ0Qx6BAgKEAE';
 
+  // O2S
+  cheminIcone_o2s= '../assets/images/O2S.jpg';
+  o2sHref = 'https://www.o2switch.fr/';
+
   // angular
   cheminIcone_angular='../assets/images/icone_angular.png';
   angularHref = 'https://angular.io/';
