@@ -15,8 +15,12 @@ export class WelcomeViewComponent implements OnInit {
   cheminImageAppli = '../assets/images/logo.png';
 
   // AWS
-  cheminIcone_aws= '../assets/images/icone_aws.png';
-  awsHref = 'https://www.google.com/aclk?sa=L&ai=DChcSEwj0_dzOua_tAhXEhNUKHeRwA4UYABAAGgJ3cw&ae=2&sig=AOD64_0qqp-W2xMtP9COYR6tM-sACVPDpQ&q&adurl&ved=2ahUKEwiJktXOua_tAhWlDGMBHcKZDccQ0Qx6BAgKEAE';
+ // cheminIcone_aws= '../assets/images/icone_aws.png';
+ // awsHref = 'https://www.google.com/aclk?sa=L&ai=DChcSEwj0_dzOua_tAhXEhNUKHeRwA4UYABAAGgJ3cw&ae=2&sig=AOD64_0qqp-W2xMtP9COYR6tM-sACVPDpQ&q&adurl&ved=2ahUKEwiJktXOua_tAhWlDGMBHcKZDccQ0Qx6BAgKEAE';
+
+  //MySQL
+  cheminIcone_mysql= '../assets/images/mysql.png';
+  mysqlHref = 'https://www.mysql.com/fr/';
 
   // O2S
   cheminIcone_o2s= '../assets/images/O2S.jpg';
