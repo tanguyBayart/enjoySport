@@ -1,6 +1,6 @@
 {
   "name": "enjoy-sport",
-  "version": "0.0.04",
+  "version": "0.0.05",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
