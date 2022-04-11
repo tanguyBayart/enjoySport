@@ -5,8 +5,8 @@ echo "### deployEnjoySport.sh - `date` - Lancement du déploiement de EnjoySport
 # récupération des sources
 echo "### deployEnjoySport.sh - `date` - récupération de sources"
 cd /home/iaam4644/EJ2repo/enjoySport
-#git reset --hard
-#git pull https://github.com/tanguyBayart/enjoySport.git main
+git reset --hard
+git pull https://github.com/tanguyBayart/enjoySport.git main
 echo "### deployEnjoySport.sh - `date` - récupération de sourceses"
 
 # modification de welcome-view.component.html
