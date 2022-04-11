@@ -5,8 +5,8 @@ echo "### deployEnjoySport.sh - `date` - Lancement du déploiement de EnjoySport
 # récupération des sources
 echo "### deployEnjoySport.sh - `date` - récupération de sources"
 cd /home/iaam4644/EJ2repo/enjoySport
-git reset --hard
-git pull https://github.com/tanguyBayart/enjoySport.git main
+#git reset --hard
+#git pull https://github.com/tanguyBayart/enjoySport.git main
 echo "### deployEnjoySport.sh - `date` - récupération de sourceses"
 
 # modification de welcome-view.component.html
@@ -16,15 +16,21 @@ VERSION=`grep version package.json  | cut -d "\"" -f4`
 echo "### deployEnjoySport.sh - `date` - date de déploiement : " $dateD
 echo "### deployEnjoySport.sh - `date` - date de déploiement : version =" $VERSION
 
+# deploiment date and version
+echo  "### deployEnjoySport.sh - `date` - date and version : " $dateD " - " $VERSION
 sed "s/==dateyyyymmddHHmmss==/${dateD}/g" /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html >| /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp1
 sed "s/==versionDev==/$VERSION/g" /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp1 >| /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp2
-mv /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp2 /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html
+cp /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp2 /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html
 
-#node = "/home/ec2-user/.nvm/versions/node/v15.14.0/bin/node"
+ls -l /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html
+ls -l /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp1
+ls -l /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp1
+ls -l /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp2
+ls -l /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html
+
+
 # build
 echo "### deployEnjoySport.sh - `date` - Génération du livrable"
-#/home/ec2-user/.nvm/versions/node/v15.14.0/bin/ng build
-#ng build
 ./node_modules/.bin/ng build
 
 if [[ $? -ne 0 ]]
@@ -41,11 +47,11 @@ rm -r ../../public_html/*
 echo "### deployEnjoySport.sh - `date` - Apache nettoye"
 
 
-echo "### deployEnjoySport.sh - `date` - Début du déploieme"
+echo "### deployEnjoySport.sh - `date` - Début du déploiete"
 cd dist/
-cp -r ./enjoySport/* $HOME/www
+cp -r ./enjoySport/* ../../../public_html/
 
-echo "### deployEnjoySport.sh - `date` - Fin du déploiemen"
+echo "### deployEnjoySport.sh - `date` - Fin du déploiemnt"
 
 
 echo "### deployEnjoySport.sh - `date` - Redemarrage d'Apache"
@@ -54,4 +60,3 @@ sudo service httpd start > /dev/null 2>&1
 
 
 echo "### deployEnjoySport.sh - `date` - Application disponible! @ http://http://enjoysport.org/"
-
