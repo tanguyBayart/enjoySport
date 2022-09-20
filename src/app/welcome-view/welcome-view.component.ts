@@ -18,7 +18,7 @@ import {
         ':enter',
         query('li', [
           style({ opacity: 0, transform: 'translateX(-100px' }),
-          stagger(-200, animate('8000ms ease-in')),
+          stagger(-200, animate('5000ms ease-in')),
         ])
       ),
       transition(

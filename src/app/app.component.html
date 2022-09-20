@@ -7,12 +7,10 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img
-    width="150"
-    src="{{cheminImageAppli}}"/>
+  <img width="150" src="{{ cheminImageAppli }}" />
 
-    <!-- 1er essai :  nav bar non réactive-->
-    <!-- <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <!-- 1er essai :  nav bar non réactive-->
+  <!-- <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
       <div class="container">
           <ul class="nav navbar-nav navbar-toggler navbar-expand-mds" routerLinkActive="active">
               <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
@@ -22,14 +20,20 @@
           </ul>
       </div>
     </nav> -->
+</div>
 
-    </div>
-
-
-    <!-- 2eme essai :  nav bar  réactive !!!-->
-  <nav class="navbar  navbar-fixed-top navbar-expand-lg navbar-light bg-light">
+<!-- 2eme essai :  nav bar  réactive !!!-->
+<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
   <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -45,11 +49,19 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li> -->
       <!-- {{ current=='home'?'active':''}} -->
-      <li class="nav-item "><a class="nav-link" routerLink="home">Home</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="cardio">Cardio</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="muscu">Musculation</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="news">Actualités</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="connect">Connection / Inscription</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="cardio">Cardio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="muscu">Musculation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="news">Actualités</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="connect">Connection / Inscription</a>
+      </li>
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -58,74 +70,43 @@
   </div>
 </nav>
 
-
-
 <!-- Content -->
 <router-outlet></router-outlet>
 
-
 <footer>
-    <a href="{{o2sHref}}" target ="_blank">
-      <img
-        width="25"
-        src="{{cheminIcone_o2s}}"
-        title="O2switch"/>
-    </a>&nbsp;
-    <a href="{{mysqlHref}}" target ="_blank">
-      <img
-        width="25"
-        src="{{cheminIcone_mysql}}"
-        title="MySql"/>
-    </a>&nbsp;
-    <a href="{{apacheHref}}" target ="_blank">
-      <img
-        width="25"
-        src="{{cheminIcone_apache}}"
-        title="Apache"/>
-    </a>&nbsp;
-    <a href="{{angularHref}}" target ="_blank">
-      <img
-        width="25"
-        src="{{cheminIcone_angular}}"
-        title="Angular"/>
-    </a>&nbsp;
+  <a href="{{ o2sHref }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_o2s }}" title="O2switch" /> </a
+  >&nbsp;
+  <a href="{{ mysqlHref }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_mysql }}" title="MySql" /> </a
+  >&nbsp;
+  <a href="{{ apacheHref }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_apache }}" title="Apache" /> </a
+  >&nbsp;
+  <a href="{{ angularHref }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_angular }}" title="Angular" /> </a
+  >&nbsp;
 
-    <a href="{{GhHref}}" target ="_blank">
-      <img
-        width="25"
-        src="{{cheminIcone_GH}}"
-        title="Github"/>
-    </a>&nbsp;
+  <a href="{{ GhHref }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_GH }}" title="Github" /> </a
+  >&nbsp;
 
-    <!-- cheminIcone_GH = '../assets/images/github.png';
+  <!-- cheminIcone_GH = '../assets/images/github.png';
     GhHref = "https://github.com/tanguyBayart/enjoySport"; -->
 
+  <a href="{{ fbHref }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_fb }}" title="FireBase" /> </a
+  >&nbsp;
 
-    <a href="{{fbHref}}" target ="_blank">
-      <img
-        width="25"
-        src="{{cheminIcone_fb}}"
-        title="FireBase"/>
-    </a>&nbsp;
+  <a href="{{ i8Href }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_I8 }}" title="Icons8" /> </a
+  >&nbsp;
 
-    <a href="{{i8Href}}" target ="_blank">
-      <img
-        width="25"
-        src="{{cheminIcone_I8}}"
-        title="Icons8"/>
-    </a>&nbsp;
-
-    <!-- contriuteurs -->
-    <a href="{{wmMail}}" target ="_blank">
-      <img
-        width="25"
-        src="{{cheminIcone_wm}}"
-        title="Webmaster"/>
-    </a>&nbsp;
-    <a href="{{wdMail}}" target ="_blank">
-      <img
-        width="25"
-        src="{{cheminIcone_wd}}"
-        title="Webdesigner"/>
-    </a>
+  <!-- contriuteurs -->
+  <a href="{{ wmMail }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_wm }}" title="Webmaster" /> </a
+  >&nbsp;
+  <a href="{{ wdMail }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_wd }}" title="Webdesigner" />
+  </a>
 </footer>
