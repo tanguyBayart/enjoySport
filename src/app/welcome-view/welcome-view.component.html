@@ -1,75 +1,96 @@
 <div class="content" role="main">
+  <div id="bigtitle">Enjoy Sport, l'application qui vous changera !</div>
 
-  <div id="bigtitle">
-    Enjoy Sport, l'application qui vous changera !
+  <br />
+  <!-- <div width="100%">
+    <div width="100%">
+      <img width="50" src="{{ cheminIcone_build }}" />
+      Site en construction !
+      <img width="50" src="{{ cheminIcone_build }}" />
+    </div>
+  </div> -->
+
+  <!-- Animation !  -->
+
+  <div style="padding-top: 20px">
+    <div class="w-100 d-flex flew-row flex-justify-content-center">
+      <ul
+        *ngIf="display"
+        @list
+        (@list.start)="toggle($event)"
+        (@list.done)="toggle($event)"
+      >
+        <li>Ce qui importe, c'est le progrès..</li>
+
+        <li>Si tu détestes recommencer, arrêtes d'abandonner...</li>
+        <li>
+          Il n'est jamais trop tard pour se fixer de nouveaux objectifs...
+        </li>
+        <li>Donc, <b>GO !</b></li>
+      </ul>
+    </div>
   </div>
 
-  <br/>
-  <div width = 100% >
+  <!-- Fin de l'animation -->
 
-    <div width = 100% >
-        <img
-          width="50"
-          src="{{cheminIcone_build}}"/>
-            Site en construction !
-          <img
-            width="50"
-            src="{{cheminIcone_build}}"/>
-    </div>
+  <div width="100%">
+    <br />
 
+    <table class="blueTable">
+      <tr>
+        <td width="125" align="center"><b>A faire</b></td>
+        <td>
+          <ul>
+            <li>Cablage avec la BDD</li>
+            <li>
+              Gestion de l'inscription / l'authentification / déconnection
+              (Firebase)
+            </li>
+            <li>
+              Saisie, enregistrement en bdd et visualisation d'un entrainement
+            </li>
+            <li>
+              Mise en place de graphiques de suivi (onglets cardio et
+              musculation)
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <b>En cours</b> &nbsp;&nbsp;<img
+            width="15"
+            src="{{ chemin_encours }}"
+          />
+        </td>
+        <td>
+          <ul>
+            <li>Création de la BDD (MySQL)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <b>Fait</b>&nbsp;&nbsp; <img width="15" src="{{ chemin_check }}" />
+        </td>
+        <td>
+          <ul>
+            <li>CI/CD : ordonnancement du déploiement 10h,14h,16h,22h</li>
+            <li>Correction du bug de déploiement</li>
+            <li>Migration vers l'hébergeur O2Switch</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <table class="blueTable">
+      <tr>
+        <td align="center">
+          EnjoySport <b>version ==versionDev==,</b> déployée le
+          <b>==dateyyyymmddHHmmss==</b>
+          <!-- EnjoySport <b>v0.58.4</b>, déployée le ==dateyyyymmddHHmmss== -->
+        </td>
+      </tr>
+    </table>
   </div>
-
-  <div width = 100% >
-
-<br/>
-
-<table class="blueTable">
-  <tr>
-    <td width="125" align="center"><b>A faire</b></td>
-    <td>
-      <ul>
-        <li>Cablage avec la BDD</li>
-        <li>Gestion de l'inscription / l'authentification / déconnection (Firebase)</li>
-        <li>Saisie, enregistrement en bdd et visualisation d'un entrainement</li>
-        <li>Mise en place de graphiques de suivi (onglets cardio et musculation) </li>
-        
-
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><b>En cours</b> &nbsp;&nbsp;<img width="15" src="{{chemin_encours}}"/></td>
-    <td>
-      <ul>
-        
-        <li>Création de la BDD (MySQL)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-
-    <td align="center"><b>Fait</b>&nbsp;&nbsp; <img width="15" src="{{chemin_check}}"/></td>
-    <td>
-      <ul>
-        <li>CI/CD : ordonnancement du déploiement 10h,14h,16h,22h	</li>
-        <li>Correction du bug de déploiement</li>
-        <li>Migration vers l'hébergeur O2Switch</li>
-      </ul>
-    </td>
-  </tr>
-
-</table>
-<br>
-<table class="blueTable">
-  <tr>
-    <td align="center">
-      EnjoySport <b>version ==versionDev==,</b> déployée le <b>==dateyyyymmddHHmmss==</b>
-      <!-- EnjoySport <b>v0.58.4</b>, déployée le ==dateyyyymmddHHmmss== -->
-
-    </td>
-  </tr>
-</table>
-
-    </div>
-
 </div>
