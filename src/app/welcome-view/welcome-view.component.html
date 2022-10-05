@@ -40,14 +40,14 @@
   </div> -->
 
   <!-- Fin de l'animation -->
+  <br />
+  <div id="mediumtitle">Suivi des évolutions</div>
 
   <div width="100%">
-    <br />
-
     <table class="blueTable">
       <tr>
-        <td width="125" align="center">
-          <b>A faire</b>&nbsp;&nbsp;<img width="15" src="{{ chemin_liste }}" />
+        <td>
+          <img width="15" src="{{ chemin_liste }}" />&nbsp;&nbsp;<b>A faire</b>
         </td>
         <td>
           <ul>
@@ -66,11 +66,9 @@
       </tr>
 
       <tr>
-        <td width="125" align="center">
-          <b>A résoudre</b>&nbsp;&nbsp;<img
-            width="15"
-            src="{{ chemin_attention }}"
-          />
+        <td>
+          <img width="15" src="{{ chemin_attention }}" />&nbsp;&nbsp;
+          <b>A résoudre</b>
         </td>
         <td>
           <ul>
@@ -87,11 +85,10 @@
       </tr>
 
       <tr>
-        <td align="center">
-          <b>En cours</b> &nbsp;&nbsp;<img
-            width="15"
-            src="{{ chemin_encours }}"
-          />
+        <td>
+          <img width="15" src="{{ chemin_encours }}" />
+          &nbsp;&nbsp;
+          <b>En cours</b>
         </td>
         <td>
           <ul>
@@ -102,11 +99,12 @@
         </td>
       </tr>
       <tr>
-        <td align="center">
-          <b>Fait</b>&nbsp;&nbsp; <img width="15" src="{{ chemin_check }}" />
+        <td>
+          <img width="15" src="{{ chemin_check }}" /> &nbsp;&nbsp; <b>Fait</b>
         </td>
         <td>
           <ul>
+            <li>Aligner la première colonne du tableau</li>
             <li>coller le "* Faites du sport!" au footer</li>
             <li>Enlever les bullet point dans l'animation (page d'acceuil)</li>
             <li>CI/CD : ordonnancement du déploiement à 00h10 et 12h10.</li>
@@ -115,12 +113,9 @@
           </ul>
         </td>
       </tr>
-    </table>
-    <br />
-    <table class="blueTable">
       <tr>
-        <td align="center">
-          EnjoySport <b>version ==versionDev==,</b> déployée le
+        <td colspan="2" align="center">
+          <b>version ==versionDev==,</b> déployée le
           <b>==dateyyyymmddHHmmss==</b>
           <!-- EnjoySport <b>v0.58.4</b>, déployée le ==dateyyyymmddHHmmss== -->
         </td>

@@ -169,6 +169,17 @@ background: text rgb(102, 102, 102);
   line-height: 35px;
 }
 
+#mediumtitle {
+  font-size: 20px;
+  color: transparent;
+  background: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+  line-height: 35px;
+}
+
 footer {
   width: 100%;
   text-align: center;
