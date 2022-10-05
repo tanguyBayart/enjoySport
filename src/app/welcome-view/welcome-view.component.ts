@@ -81,4 +81,7 @@ export class WelcomeViewComponent implements OnInit {
   chemin_check = '../assets/images/checked.png';
 
   chemin_encours = '../assets/images/progressing.png';
+
+  chemin_liste = '../assets/images/liste.png';
+  chemin_attention = '../assets/images/warning.png';
 }
