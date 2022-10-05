@@ -1,36 +1,62 @@
 <div class="content" role="main">
+  <div id="bigtitle">{{ training_type }}</div>
 
-  <div id="bigtitle">{{training_type}}</div>
-
-  <br/><br/>
-  <div width = 100% >
-      <img
-        width="50"
-        src="{{cheminIcone_build}}"/>
-          Site en construction !
-        <img
-          width="50"
-          src="{{cheminIcone_build}}"/>
+  <br /><br />
+  <div width="100%">
+    <img width="50" src="{{ cheminIcone_build }}" />
+    Site en construction !
+    <img width="50" src="{{ cheminIcone_build }}" />
   </div>
-  <br/>
+  <br />
 
-    <b>{{training_todo}}</b>
-    <ul>
-        <li *ngFor="let training_todo of training_todo_tab">
-          {{training_todo}}
-        </li>
-    </ul>
+  <!-- <div>
+    <canvas
+      baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [chartType]="barChartType"
+    >
+    </canvas>
+  </div> -->
 
-    <div>
-        <canvas baseChart
-                [datasets]="barChartData"
-                [labels]="barChartLabels"
-                [options]="barChartOptions"
-                [legend]="barChartLegend"
-                [chartType]="barChartType">
-        </canvas>
-    </div>
-
-
-
+  <!-- form : begin -->
+  <div>
+    <form [formGroup]="trainingForm" (ngSubmit)="submit()">
+      <div class="form-group d-flex flex-column">
+        <label>Date</label>
+        <input formControlName="date" type="date" />
+      </div>
+      <hr />
+      <button (click)="addTraining()" class="btn btn-primary" type="button">
+        Ajouter un exercice
+      </button>
+      <hr />
+      <div formArrayName="trainings">
+        <div
+          [formGroupName]="index"
+          *ngFor="let training of trainings; let index = index"
+        >
+          <div class="form-group d-flex flex-column">
+            <label>Nom</label>
+            <input formControlName="name" type="text" />
+          </div>
+          <!-- <div class="form-group d-flex flex-column">
+            <label>Quantité</label>
+            <input formControlName="quantity" type="number" />
+          </div> -->
+        </div>
+      </div>
+      <div class="actions">
+        <button [disabled]="trainingForm.invalid" class="btn btn-primary">
+          Valider
+        </button>
+        <button type="button" routerLink="../" class="btn btn-secondary">
+          Annuler
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- form : end -->
 </div>
