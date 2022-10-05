@@ -33,6 +33,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appRoutes } from './app.routes';
+import { CardioViewComponent } from './cardio-view/cardio-view.component';
+import { MuscuViewComponent } from './muscu-view/muscu-view.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { appRoutes } from './app.routes';
     SignupComponent,
     SigninComponent,
     NewsComponent,
+    MuscuViewComponent,
+    CardioViewComponent,
   ],
   imports: [
     BrowserModule,

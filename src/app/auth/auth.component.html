@@ -1,25 +1,21 @@
 <div class="content" role="main">
-  <div id="bigtitle">Authentification</div>
+  <div id="bigtitle">Cardio</div>
 
-  <br/><br/>
+  <br /><br />
 
-  <div width = 100% >
-      <img
-        width="50"
-        src="{{cheminIcone_build}}"/>
-          Site en construction !
-        <img
-          width="50"
-          src="{{cheminIcone_build}}"/>
+  <div width="100%">
+    <img width="25" src="{{ cheminIcone_build }}" />
+    Cette Rubrique est en construction...
+    <img width="25" src="{{ cheminIcone_build }}" />
   </div>
-  <br/>
 
-
-    <b>{{auth_todo}}</b>
+  <br /><br />
+  <div width="100%">
+    <b>{{ auth_todo }}</b>
     <ul>
-        <li *ngFor="let auth_todo of auth_todo_tab">
-          {{auth_todo}}
-        </li>
+      <li *ngFor="let auth_todo of auth_todo_tab">
+        {{ auth_todo }}
+      </li>
     </ul>
-
+  </div>
 </div>
