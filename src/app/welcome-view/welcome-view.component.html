@@ -1,28 +1,20 @@
 <div class="content" role="main">
-  <div id="bigtitle">Enjoy Sport, l'application qui vous changera !</div>
-
-  <br />
-  <!-- <div width="100%">
-    <div width="100%">
-      <img width="50" src="{{ cheminIcone_build }}" />
-      Site en construction !
-      <img width="50" src="{{ cheminIcone_build }}" />
-    </div>
-  </div> -->
+  <div id="bigtitle">L'application qui vous changera !</div>
 
   <!-- Animation !  -->
 
-  <div style="padding-top: 20px">
+  <div style="padding-top: 20px" class="anim">
     <div class="w-100 d-flex flew-row flex-justify-content-center">
       <ul
+        class="anim"
         *ngIf="display"
         @list
         (@list.start)="toggle($event)"
         (@list.done)="toggle($event)"
       >
-        <li>Bon esprit,</li>
+        <li>Esprit serein,</li>
         <li>Corps sain,</li>
-        <li>Bonheur et sérénité.</li>
+        <li>Bonheur...</li>
         <li><b>Enjoy Sport !*</b></li>
       </ul>
     </div>
@@ -48,11 +40,6 @@
   </div> -->
 
   <!-- Fin de l'animation -->
-  <div>
-    <div align="center">
-      <b>* Faire du sport</b>
-    </div>
-  </div>
 
   <div width="100%">
     <br />
@@ -62,19 +49,12 @@
         <td width="125" align="center"><b>A faire</b></td>
         <td>
           <ul>
-            <li>Enleger les bullet point dans l'animation</li>
-            <li>Cablage avec la BDD</li>
             <li>
-              Gestion de l'inscription / l'authentification / déconnection
-              (Firebase)
+              Gestion de l'inscription/authentification/déconnection (Firebase
+              ?)
             </li>
-            <li>
-              Saisie, enregistrement en bdd et visualisation d'un entrainement
-            </li>
-            <li>
-              Mise en place de graphiques de suivi (onglets cardio et
-              musculation)
-            </li>
+            <li>Formulaire de saisie/modification d'un entrainement (CRUD)</li>
+            <li>Mise en place de graphiques de suivi</li>
           </ul>
         </td>
       </tr>
@@ -87,7 +67,9 @@
         </td>
         <td>
           <ul>
+            <li>Modélisation (MCD)</li>
             <li>Création de la BDD (MySQL)</li>
+            <li>Cablage avec la BDD</li>
           </ul>
         </td>
       </tr>
@@ -97,9 +79,11 @@
         </td>
         <td>
           <ul>
-            <li>CI/CD : ordonnancement du déploiement 10h,14h,16h,22h</li>
-            <li>Correction du bug de déploiement</li>
-            <li>Migration vers l'hébergeur O2Switch</li>
+            <li>coller le "* Faites du sport!" au footer</li>
+            <li>Enlever les bullet point dans l'animation (page d'acceuil)</li>
+            <li>CI/CD : ordonnancement du déploiement à 00h10 et 12h10.</li>
+            <li>Correction du bug de déploiement.</li>
+            <li>Migration vers l'hébergeur O2Switch.</li>
           </ul>
         </td>
       </tr>
