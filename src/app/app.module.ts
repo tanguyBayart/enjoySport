@@ -35,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appRoutes } from './app.routes';
 import { CardioViewComponent } from './cardio-view/cardio-view.component';
 import { MuscuViewComponent } from './muscu-view/muscu-view.component';
+import { TipsComponent } from './tips/tips.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MuscuViewComponent } from './muscu-view/muscu-view.component';
     NewsComponent,
     MuscuViewComponent,
     CardioViewComponent,
+    TipsComponent,
   ],
   imports: [
     BrowserModule,
