@@ -9,31 +9,65 @@
   </div>
   <br /><br />
 
-  <div id="mediumtitle">Calcul du métabolisme de base (MB) en KCAL</div>
-  <ul>
-    <li>Sexe</li>
-    <li>Poids (kg)</li>
-    <li>Taille (cm)</li>
-    <li>Age</li>
-    <li>
-      MB
-      <!-- MB = 13,707 * Poids + 492,3 * Taille - 6,673 * Age + 77,607 pour les
-      hommes
-      <br\> 
-      MB = 9,74 * Poids + 172,9*Taille - 4,737 * Age + 667,051 pour les
-      femmes -->
-    </li>
-  </ul>
+  <div id="mediumtitle">Calcul du Métabolisme de base (MB)</div>
+  <!-- <div>
+    c’est l’énergie que votre corps dépense au repos pour assurer ses fonctions
+    vitales (respiration, digestion, maintien de la température corporelle,
+    système cardio-vasculaire et cérébral). Pour le calculer, vous avez besoin
+    de connaître votre âge, votre poids, et votre taille.
+  </div> -->
+  <!-- <form [formGroup]="mbForm"> -->
+  <table id="tabFormMb">
+    <tr>
+      <td s>Sexe*</td>
+      <td>
+        <input type="radio" name="sexe" value="0" onchange="calculateMB()" />
+        Homme
+        <input type="radio" name="sexe" value="1" onchange="calculateMB()" />
+        Femme
+      </td>
+    </tr>
+    <tr>
+      <td>Poid (kg)*</td>
+      <td><input type="number" name="poids" min="0" max="200" /></td>
+    </tr>
+    <tr>
+      <td>Taille (cm)*</td>
+      <td><input type="number" name="taille" min="0" max="300" /></td>
+    </tr>
+    <tr>
+      <td>Age*</td>
+      <td><input type="number" name="age" min="0" max="120" /></td>
+    </tr>
+    <tr>
+      <td>Métabolisme de base (KCAL)</td>
+      <td>{{ mb }}</td>
+    </tr>
+  </table>
+  <!-- </form> -->
   <br /><br />
 
   <div id="mediumtitle">Niveau d'activité (NA)</div>
-  <ul>
+  <!-- <ul>
     <li>sédentaire (1,39)</li>
     <li>peu actif(1,59)</li>
     <li>actif(1,89)</li>
     <li>très actif(2,5)</li>
-  </ul>
-
+  </ul> -->
+  <table>
+    <tr>
+      <td>
+        <input type="radio" name="NAct" value="0" onchange="calculateMB()" />
+        Sédentaire &nbsp;&nbsp;
+        <input type="radio" name="NAct" value="1.59" onchange="calculateMB()" />
+        Peu actif &nbsp;&nbsp;
+        <input type="radio" name="NAct" value="1.89" onchange="calculateMB()" />
+        Actif &nbsp;&nbsp;
+        <input type="radio" name="NAct" value="2.5" onchange="calculateMB()" />
+        Très actif &nbsp;&nbsp;
+      </td>
+    </tr>
+  </table>
   <br /><br />
 
   <div id="mediumtitle">
@@ -42,6 +76,4 @@
   <ul>
     <li>= MB * NA</li>
   </ul>
-
-  https://www.coachsportif27.com/post/la-fr%C3%A9quence-cardiaque-id%C3%A9ale-pour-br%C3%BBler-des-graisses
 </div>

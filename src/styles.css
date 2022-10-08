@@ -70,7 +70,7 @@ p {
 .toolbar {
   max-width: 100%;
   /* position: absolute; */
-  position: fixed;
+  /*position: fixed;*/
   top: 0;
   left: 0;
   right: 0;
@@ -85,7 +85,18 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .toolbar img {
   margin: 0 16px 0 16px;
   margin-left: auto;
@@ -95,7 +106,7 @@ p {
 .navbar {
   display: flex;
   /* top: 300px; */
-  margin: 90px auto 0px;
+  margin: 0;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -180,10 +191,20 @@ background: text rgb(102, 102, 102);
   line-height: 35px;
 }
 
+#smalltitle {
+  font-size: 14px;
+  color: transparent;
+  background: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+  line-height: 35px;
+}
+
 footer {
   width: 100%;
   text-align: center;
-  height: 25px;
   background-color: #e6e6ff;
   margin-left: auto;
   margin-right: auto;
@@ -191,9 +212,15 @@ footer {
 }
 
 table {
-  width: 90%;
+  width: 30%;
   margin-left: auto;
   margin-right: auto;
+  border: 1px;
+}
+
+table#tabFormMb td {
+  border: 10px;
+  width: "50%";
 }
 
 td {
@@ -312,3 +339,83 @@ table.blueTable .links:hover {
 }
 
 /* BLUE TABLE END*/
+
+/* TEST POPIN*/
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Roboto, Helvetica, sans-serif;
+}
+/* Fixez le bouton sur le côté gauche de la page the button on the left side of the page */
+.open-btn {
+  display: flex;
+  justify-content: flex-start;
+}
+/* Stylez et fixez le bouton sur la page */
+.open-button {
+  background-color: #1c87c9;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+}
+/* Positionnez la forme Popup */
+.login-popup {
+  position: relative;
+  width: 100%;
+}
+/* Masquez la forme Popup */
+.form-popup {
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-45%, 5%);
+  border: 2px solid #666;
+  z-index: 9;
+}
+/* Styles pour le conteneur de la forme */
+.form-container {
+  max-width: 7;
+  padding: 20px;
+  background-color: #fff;
+}
+/* Largeur complète pour les champs de saisie */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #eee;
+}
+/* Quand les entrées sont concentrées, faites quelque chose */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Stylez le bouton de connexion */
+.form-container .btn {
+  background-color: #8ebf42;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+/* Stylez le bouton pour annuler */
+.form-container .cancel {
+  background-color: #8ebf42;
+}
+/* Planez les effets pour les boutons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}

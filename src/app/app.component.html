@@ -5,12 +5,13 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img width="150" src="{{ cheminImageAppli }}" />
+<div class="header">
+  <!-- Toolbar -->
+  <div class="toolbar" role="banner">
+    <img width="150" src="{{ cheminImageAppli }}" />
 
-  <!-- 1er essai :  nav bar non réactive-->
-  <!-- <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <!-- 1er essai :  nav bar non réactive-->
+    <!-- <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
       <div class="container">
           <ul class="nav navbar-nav navbar-toggler navbar-expand-mds" routerLinkActive="active">
               <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
@@ -20,26 +21,26 @@
           </ul>
       </div>
     </nav> -->
-</div>
+  </div>
 
-<!-- 2eme essai :  nav bar  réactive !!!-->
-<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
-  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <!-- 2eme essai :  nav bar  réactive !!!-->
+  <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <!-- <li class="nav-item active">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" routerLinkActive="active">
+        <!-- <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -48,53 +49,57 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li> -->
-      <!-- {{ current=='home'?'active':''}} -->
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="cardio"
-          >Cardio</a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="muscu"
-          >Musculation</a
-        >
-      </li>
+        <!-- {{ current=='home'?'active':''}} -->
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="cardio"
+            >Cardio</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="muscu"
+            >Musculation</a
+          >
+        </li>
 
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="tips"
-          >Conseils</a
-        >
-      </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="tips"
+            >Conseils</a
+          >
+        </li>
 
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="news"
-          >Actualités</a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="connect"
-          >Connection / Inscription</a
-        >
-      </li>
-    </ul>
-    <!-- <form class="form-inline my-2 my-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="news"
+            >Actualités</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="connect"
+            >Connection / Inscription</a
+          >
+        </li>
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form> -->
-  </div>
-</nav>
-
-<!-- Content -->
-<router-outlet></router-outlet>
-
-<div class="prefooter" width="100%" align="center" le="padding-bottom: 20px">
-  <b>* Esprit serein... Corps dynamique... Bonheur... Faites du sport!</b>
+    </div>
+  </nav>
 </div>
 
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+<!-- Content -->
+
 <footer>
+  <div class="prefooter" width="100%" align="center" le="padding-bottom: 20px">
+    <b>* Esprit serein... Corps dynamique... Bonheur... Faites du sport!</b>
+  </div>
   <a href="{{ o2sHref }}" target="_blank">
     <img width="25" src="{{ cheminIcone_o2s }}" title="O2switch" /> </a
   >&nbsp;

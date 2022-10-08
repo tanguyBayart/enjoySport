@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   animate,
   query,
@@ -8,6 +8,10 @@ import {
   trigger,
   AnimationEvent,
 } from '@angular/animations';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { TrainingService } from '../services/trainingService';
+import { Training } from '../interfaces/training.interface';
 
 @Component({
   selector: 'app-tips',
@@ -41,7 +45,28 @@ export class TipsComponent implements OnInit {
   tips_title = 'Conseils';
   cheminIcone_build = '../../assets/images/construction.png';
 
-  constructor() {}
+  mb = 0;
+
+  public MBform: FormGroup;
+  @Input() public sexe: number;
+  @Input() public poids: number;
+  @Input() public taille: number;
+  @Input() public age: number;
+
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private trainingService: TrainingService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {}
+
+  public submit(): void {
+    console.log('submit() called (TODO)');
+  }
+
+  public calculateMB(): void {
+    console.log('calculateMB()gn called');
+  }
 }

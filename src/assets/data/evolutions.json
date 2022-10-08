@@ -3,7 +3,7 @@
     {
       "name": "A faire",
       "class": "todo",
-      "btnClass": "btn-primary",
+      "btnClass": "btn-secondary",
       "icon": "../assets/images/liste.png",
       "tasks": [
         "Formulaire d'inscription/authentification/déconnection (Firebase?).",
@@ -16,7 +16,7 @@
     {
       "name": "A résoudre",
       "class": "toResolve",
-      "btnClass": "btn-warning",
+      "btnClass": "btn-secondary",
       "icon": "../assets/images/warning.png",
       "tasks": [
         "Bug de génération du livrable lors de l'ordonnancement du déploiement (ticket ouvert)",
@@ -29,7 +29,7 @@
     {
       "name": "En cours",
       "class": "inProgress",
-      "btnClass": "btn-info",
+      "btnClass": "btn-secondary",
       "icon": "../assets/images/progressing.png",
       "tasks": [
         "Ajout d'une rubrique \"tips\" (rythme cardiaque optimal, alimentation, ... ) avec fonctionnalités CRUD </br> Attention à la mise en forme (CSS spécifique) ...",
@@ -43,7 +43,7 @@
     {
       "name": "Fait",
       "class": "done",
-      "btnClass": "btn-success",
+      "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
         "Réfactoring : séparation stricte des pages <i>musculation</i> et <i>cardio</i>.",

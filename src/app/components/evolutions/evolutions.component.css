@@ -1,3 +1,11 @@
-.row-column{
+.row-column {
   flex-direction: column;
+}
+/* div {
+  background: red;
+} */
+
+button {
+  font-weight: bold;
+  text-transform: uppercase;
 }
