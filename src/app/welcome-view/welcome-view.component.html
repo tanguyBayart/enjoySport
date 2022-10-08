@@ -40,14 +40,33 @@
   </div> -->
 
   <!-- Fin de l'animation -->
-  <br />
-  <div id="mediumtitle">Suivi des évolutions</div>
 
-  <div width="100%">
+  <br />
+  <!-- <div id="mediumtitle">Suivi des évolutions</div> -->
+
+  <!-- <div>
+    <button class="btn btn-primary" (click)="openDialogTodo()">
+      <img width="15" src="{{ chemin_liste }}" />&nbsp;&nbsp;A faire</button
+    >&nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="openDialogToSolve()">
+      <img width="15" src="{{ chemin_attention }}" />&nbsp;&nbsp; A résoudre</button
+    >&nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="openDialogInProgress()">
+      <img width="15" src="{{ chemin_encours }}" />
+      &nbsp;&nbsp;En cours</button
+    >&nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="openDialogDone()">
+      <img width="15" src="{{ chemin_check }}" /> &nbsp;&nbsp;Fait
+    </button>
+  </div> -->
+
+  <!-- <div width="100%">
     <table class="blueTable">
       <tr>
         <td>
-          <img width="15" src="{{ chemin_liste }}" />&nbsp;&nbsp;<b>A faire</b>
+          <img width="15" src="{{ chemin_liste }}" />&nbsp;&nbsp;<b
+            ><a href="./popups/todo.html" target="_blank"> A faire</a></b
+          >
         </td>
         <td>
           <ul>
@@ -106,6 +125,14 @@
         <td>
           <ul>
             <li>
+              Modifier la structure du suivi des évolutions :
+              <a
+                href="https://fr.w3docs.com/tools/code-editor/3886"
+                target="_blank"
+                >Tuto w3docs</a
+              >
+            </li>
+            <li>
               Ajout d'une rubrique "tips" (rythme cardiaque optimal,
               alimentation, ... ) avec fonctionnalités CRUD
               <br />Attention à la mise en forme (CSS sécifique) ...
@@ -129,7 +156,6 @@
               <i>cardio</i>.
             </li>
             <li>Aligner la première colonne du tableau.</li>
-            <li>Coller le "*" au footer.</li>
             <li>Enlever les bullet point dans l'animation (page d'acceuil).</li>
             <li>CI/CD : ordonnancement du déploiement à 00h10 et 12h10.</li>
             <li>Correction du bug de déploiement.</li>
@@ -140,11 +166,30 @@
       <tr>
         <td colspan="2" align="center">
           <b>version ==versionDev==,</b> déployée le
-          <b>==dateyyyymmddHHmmss==</b>
-          <!-- EnjoySport <b>v0.58.4</b>, déployée le ==dateyyyymmddHHmmss== -->
+          <b>==dateyyyymmddHHmmss==</b>           
         </td>
       </tr>
     </table>
   </div>
+   -->
+  <table class="blueTable">
+    <thead>
+      <td align="center">
+        <span id="mediumtitle">Suivi des évolutions</span>
+      </td>
+    </thead>
+    <tr>
+      <td align="center">
+        <app-evolutions [evolutions]="evolutions"></app-evolutions>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <b>version ==versionDev==,</b> déployée le
+        <b>==dateyyyymmddHHmmss==</b>
+        <!-- EnjoySport <b>v0.58.4</b>, déployée le ==dateyyyymmddHHmmss== -->
+      </td>
+    </tr>
+  </table>
 </div>
 <br /><br />

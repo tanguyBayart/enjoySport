@@ -37,6 +37,10 @@ import { CardioViewComponent } from './cardio-view/cardio-view.component';
 import { MuscuViewComponent } from './muscu-view/muscu-view.component';
 import { TipsComponent } from './tips/tips.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { PopupTodoComponent } from './popup-todo/popup-todo.component';
+import { EvolutionsComponent } from './components/evolutions/evolutions.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +53,8 @@ import { TipsComponent } from './tips/tips.component';
     MuscuViewComponent,
     CardioViewComponent,
     TipsComponent,
+    PopupTodoComponent,
+    EvolutionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +68,7 @@ import { TipsComponent } from './tips/tips.component';
     // MatToolbarModule,
     // MatIconModule,
     BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent],

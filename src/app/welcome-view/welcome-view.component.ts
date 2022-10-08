@@ -8,6 +8,10 @@ import {
   trigger,
   AnimationEvent,
 } from '@angular/animations';
+
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
+import evolutions from '../../assets/data/evolutions.json';
 @Component({
   selector: 'app-welcome-view',
   templateUrl: './welcome-view.component.html',
@@ -18,14 +22,14 @@ import {
         ':enter',
         query('li', [
           style({ opacity: 0, transform: 'translateX(-100px' }),
-          stagger(-200, animate('5000ms ease-in')),
+          stagger(200, animate('5000ms ease-in')),
         ])
       ),
       transition(
         ':leave',
         query('li', [
           stagger(
-            -200,
+            200,
             animate(
               '400ms ease-in',
               style({ opacity: 0, transform: 'translateX(100px' })
@@ -38,6 +42,7 @@ import {
 })
 export class WelcomeViewComponent implements OnInit {
   public display = true;
+  public evolutions = evolutions.evos;
 
   constructor() {}
 
@@ -50,6 +55,22 @@ export class WelcomeViewComponent implements OnInit {
   ngOnInit(): void {}
   title = 'Enjoy Sport !';
   cheminImageAppli = '../assets/images/logo.png';
+
+  openDialogTodo() {
+    /*this.dialogRef.open(PopupComponent);*/
+  }
+
+  openDialogToSolve() {
+    /*this.dialogRef.open(PopupComponent);*/
+  }
+
+  openDialogInProgress() {
+    /*this.dialogRef.open(PopupComponent);*/
+  }
+
+  openDialogDone() {
+    /*this.dialogRef.open(PopupComponent);*/
+  }
 
   // AWS
   // cheminIcone_aws= '../assets/images/icone_aws.png';

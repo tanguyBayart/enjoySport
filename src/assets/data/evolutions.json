@@ -1,0 +1,59 @@
+{
+  "evos": [
+    {
+      "name": "A faire",
+      "class": "todo",
+      "btnClass": "btn-primary",
+      "icon": "../assets/images/liste.png",
+      "tasks": [
+        "Formulaire d'inscription/authentification/déconnection (Firebase?).",
+        "Mise en place du auth gard en fonction de la session courante de l'utilisateur.",
+        "Formulaire de saisie/visualisation/modification/suppression des entrainements (CRUD).",
+        "Mise en place de graphiques de suivi.",
+        "Ajout d'un nouveau type d'activité varié (marche, étirements, ...)"
+      ]
+    },
+    {
+      "name": "A résoudre",
+      "class": "toResolve",
+      "btnClass": "btn-warning",
+      "icon": "../assets/images/warning.png",
+      "tasks": [
+        "Bug de génération du livrable lors de l'ordonnancement du déploiement (ticket ouvert)",
+        "Problème de double ascenseur de défilement",
+        "Dans l'animation, faire défiler de la première à la dernière ligne.",
+        "Problème du haut de l'ascenseur de défilement.",
+        "Problème de menu qui ne se rétracte pas après selection d'une catégorie (mobile)."
+      ]
+    },
+    {
+      "name": "En cours",
+      "class": "inProgress",
+      "btnClass": "btn-info",
+      "icon": "../assets/images/progressing.png",
+      "tasks": [
+        "Ajout d'une rubrique \"tips\" (rythme cardiaque optimal, alimentation, ... ) avec fonctionnalités CRUD </br> Attention à la mise en forme (CSS spécifique) ...",
+        "Modélisation de la BDD (MCD).",
+        "Revision et préparation des données (historique).",
+        "Création de la BDD (MySQL).",
+        "import des données.",
+        "Cablage avec la BDD."
+      ]
+    },
+    {
+      "name": "Fait",
+      "class": "done",
+      "btnClass": "btn-success",
+      "icon": "../assets/images/checked.png",
+      "tasks": [
+        "Réfactoring : séparation stricte des pages <i>musculation</i> et <i>cardio</i>.",
+        "Aligner la première colonne du tableau.",
+        "Coller le \"*\" au footer.",
+        "Enlever les bullet point dans l'animation (page d'acceuil).",
+        "CI/CD : ordonnancement du déploiement à 00h10 et 12h10.",
+        "Correction du bug de déploiement.",
+        "Migration vers l'hébergeur O2Switch."
+      ]
+    }
+  ]
+}
