@@ -38,7 +38,6 @@ import { MuscuViewComponent } from './muscu-view/muscu-view.component';
 import { TipsComponent } from './tips/tips.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
-import { PopupTodoComponent } from './popup-todo/popup-todo.component';
 import { EvolutionsComponent } from './components/evolutions/evolutions.component';
 
 @NgModule({
@@ -53,7 +52,6 @@ import { EvolutionsComponent } from './components/evolutions/evolutions.componen
     MuscuViewComponent,
     CardioViewComponent,
     TipsComponent,
-    PopupTodoComponent,
     EvolutionsComponent,
   ],
   imports: [

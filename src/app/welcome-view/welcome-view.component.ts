@@ -9,8 +9,6 @@ import {
   AnimationEvent,
 } from '@angular/animations';
 
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { PopupComponent } from '../popup/popup.component';
 import evolutions from '../../assets/data/evolutions.json';
 @Component({
   selector: 'app-welcome-view',
