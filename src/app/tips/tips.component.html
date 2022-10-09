@@ -7,57 +7,54 @@
     Cette Rubrique est en construction...
     <img width="25" src="{{ cheminIcone_build }}" />
   </div>
-  <br /><br />
+  <br />
 
-  <div id="mediumtitle">Calcul du Métabolisme de base (MB)</div>
-  <!-- <div>
-    c’est l’énergie que votre corps dépense au repos pour assurer ses fonctions
-    vitales (respiration, digestion, maintien de la température corporelle,
-    système cardio-vasculaire et cérébral). Pour le calculer, vous avez besoin
-    de connaître votre âge, votre poids, et votre taille.
-  </div> -->
-  <!-- <form [formGroup]="mbForm"> -->
-  <table id="tabFormMb">
-    <tr>
-      <td s>Sexe*</td>
-      <td>
-        <input type="radio" name="sexe" value="0" onchange="calculateMB()" />
-        Homme
-        <input type="radio" name="sexe" value="1" onchange="calculateMB()" />
-        Femme
-      </td>
-    </tr>
-    <tr>
-      <td>Poid (kg)*</td>
-      <td><input type="number" name="poids" min="0" max="200" /></td>
-    </tr>
-    <tr>
-      <td>Taille (cm)*</td>
-      <td><input type="number" name="taille" min="0" max="300" /></td>
-    </tr>
-    <tr>
-      <td>Age*</td>
-      <td><input type="number" name="age" min="0" max="120" /></td>
-    </tr>
-    <tr>
-      <td>Métabolisme de base (KCAL)</td>
-      <td>{{ mb }}</td>
-    </tr>
-  </table>
-  <!-- </form> -->
+  <div id="mediumtitle">Calcul du Métabolisme de base</div>
+  <div>
+    Votre métabolisme de base (MB) est l’énergie que votre corps dépense au
+    repos pour assurer ses fonctions vitales. <br />
+    Il est calculé à partir de votre âge, de votre poids, ainsi que de votre
+    taille <br /><br />
+  </div>
+  <form>
+    <!-- [formGroup]="mbForm" -->
+    <table width="80%" border="3">
+      <tr>
+        <td s>Sexe*</td>
+        <td width="400px">
+          <input type="radio" name="sexe" value="0" onchange="calculateMB()" />
+          Homme &nbsp;
+          <input type="radio" name="sexe" value="1" onchange="calculateMB()" />
+          Femme
+        </td>
+      </tr>
+      <tr>
+        <td>Poid (kg)*</td>
+        <td><input type="number" name="poids" min="0" max="200" /></td>
+      </tr>
+      <tr>
+        <td>Taille (cm)*</td>
+        <td><input type="number" name="taille" min="0" max="300" /></td>
+      </tr>
+      <tr>
+        <td>Age*</td>
+        <td><input type="number" name="age" min="0" max="120" /></td>
+      </tr>
+      <tr>
+        <td>Métabolisme de base (MB) en KCAL :</td>
+        <td>{{ mb }}</td>
+      </tr>
+    </table>
+  </form>
+
   <br /><br />
 
   <div id="mediumtitle">Niveau d'activité (NA)</div>
-  <!-- <ul>
-    <li>sédentaire (1,39)</li>
-    <li>peu actif(1,59)</li>
-    <li>actif(1,89)</li>
-    <li>très actif(2,5)</li>
-  </ul> -->
+
   <table>
     <tr>
       <td>
-        <input type="radio" name="NAct" value="0" onchange="calculateMB()" />
+        <input type="radio" name="NAct" value="1.39" onchange="calculateMB()" />
         Sédentaire &nbsp;&nbsp;
         <input type="radio" name="NAct" value="1.59" onchange="calculateMB()" />
         Peu actif &nbsp;&nbsp;
@@ -75,5 +72,6 @@
   </div>
   <ul>
     <li>= MB * NA</li>
+    <li>{{ mb }}</li>
   </ul>
 </div>

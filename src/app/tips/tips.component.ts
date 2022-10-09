@@ -52,6 +52,7 @@ export class TipsComponent implements OnInit {
   @Input() public poids: number;
   @Input() public taille: number;
   @Input() public age: number;
+  @Input() public NAct: number;
 
   constructor(
     private fb: FormBuilder,

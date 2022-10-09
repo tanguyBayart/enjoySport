@@ -1,7 +1,9 @@
-import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 //import * as firebase from 'firebase';
 import firebase from 'firebase/app';
 import { MatDialog } from '@angular/material/dialog';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private dialogRef: MatDialog, private elmtRef: ElementRef) {
+  constructor(private dialogRef: MatDialog, private router: Router) {
     const configFB = {
       apiKey: 'AIzaSyChqvrqQBRV0FrI2t5q-PfSrTjpU54wMWw',
       authDomain: 'enjoysport-e6d57.firebaseapp.com',
@@ -20,6 +22,24 @@ export class AppComponent {
       measurementId: 'G-YR4S294WM2',
     };
     firebase.initializeApp(configFB);
+
+    /**
+     * on chope les evennements du router;
+     * on filtre et test si le type d'evennement est NavigationEnd
+     * si oui on 's'abonne' a l'observable ( subscribe )
+     *
+     * à partir de là:
+     * on utilise jquery pour cibler la navbar et lui dire de la fermer:
+     *
+     *  $ >> jquery
+     *  #navbarSupportedContent >> l'id de ta navbar
+     *  .collapse('hide') >> c'est la methode de  bootstrap ajouté a jquery pour piloter leurs object collapsible
+     */
+    this.router.events
+      .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
+      .subscribe((e) => {
+        $('#navbarSupportedContent').collapse('hide');
+      });
   }
 
   ngAfterViewInit(): void {}

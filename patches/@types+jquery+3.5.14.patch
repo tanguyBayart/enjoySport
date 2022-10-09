@@ -1,0 +1,26 @@
+diff --git a/node_modules/@types/jquery/JQuery.d.ts b/node_modules/@types/jquery/JQuery.d.ts
+index 1e463ab..b60035b 100644
+--- a/node_modules/@types/jquery/JQuery.d.ts
++++ b/node_modules/@types/jquery/JQuery.d.ts
+@@ -2513,6 +2513,8 @@ $( "span:last" ).text( $( "div" ).data( "test" ).last );
+ </html>
+ ```
+      */
++    /* bootstrap overload */
++    collapse(name: string): any;
+     data(key: string, value: string | number | boolean | symbol | object | null): this;
+     /**
+      * Store arbitrary data associated with the matched elements.
+diff --git a/node_modules/@types/jquery/JQueryStatic.d.ts b/node_modules/@types/jquery/JQueryStatic.d.ts
+index 1897898..2e22cf8 100644
+--- a/node_modules/@types/jquery/JQueryStatic.d.ts
++++ b/node_modules/@types/jquery/JQueryStatic.d.ts
+@@ -416,6 +416,8 @@ $( "button" ).click( function() {
+ </html>
+ ```
+      */
++    /* bootstrap overload */
++    collapse(name: string): any;
+     data<T extends string | number | boolean | symbol | object | null>(element: Element | Document | Window | JQuery.PlainObject, key: string, value: T): T;
+     /**
+      * Returns value at named data store for the element, as set by `jQuery.data(element, name, value)`, or the full data store for the element.

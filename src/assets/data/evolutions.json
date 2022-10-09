@@ -22,8 +22,7 @@
         "Bug de génération du livrable lors de l'ordonnancement du déploiement (ticket ouvert)",
         "Problème de double ascenseur de défilement",
         "Dans l'animation, faire défiler de la première à la dernière ligne.",
-        "Problème du haut de l'ascenseur de défilement.",
-        "Problème de menu qui ne se rétracte pas après selection d'une catégorie (mobile)."
+        "Problème du haut de l'ascenseur de défilement."
       ]
     },
     {
@@ -46,6 +45,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
+        "Problème de menu qui ne se rétracte pas après selection d'une catégorie (mobile).",
         "Réfactoring : séparation stricte des pages <i>musculation</i> et <i>cardio</i>.",
         "Aligner la première colonne du tableau.",
         "Coller le \"*\" au footer.",

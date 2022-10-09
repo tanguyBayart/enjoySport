@@ -9,6 +9,9 @@ git reset --hard
 git pull https://github.com/tanguyBayart/enjoySport.git main
 echo "### deployEnjoySport.sh - `date` - récupération de sourceses"
 
+## npm install
+npm i
+
 # modification de welcome-view.component.html
 dateD=`date +"%Y-%m-%d à %H:%M"`
 VERSION=`grep version package.json  | cut -d "\"" -f4`
