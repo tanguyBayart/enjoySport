@@ -19,9 +19,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/warning.png",
       "tasks": [
-        "Bug de génération du livrable lors de l'ordonnancement du déploiement (ticket ouvert)",
-        "Dans l'animation, faire défiler de la première à la dernière ligne.",
-        "Problème du haut de l'ascenseur de défilement."
+        "Bug de génération du livrable lors de l'ordonnancement du déploiement (ticket ouvert)"
       ]
     },
     {
@@ -44,8 +42,10 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
-        "Problème de double ascenseur de défilement",
-        "Problème de menu qui ne se rétracte pas après selection d'une catégorie (mobile).",
+        "Résolut : Dans l'animation, faire défiler de la première à la dernière ligne.",
+        "Résolut : Problème du haut de l'ascenseur de défilement.",
+        "Résolut : Problème de double ascenseur de défilement",
+        "Résolut : Problème de menu qui ne se rétracte pas après selection d'une catégorie (mobile).",
         "Réfactoring : séparation stricte des pages <i>musculation</i> et <i>cardio</i>.",
         "Aligner la première colonne du tableau.",
         "Coller le \"*\" au footer.",
