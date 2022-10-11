@@ -21,35 +21,72 @@
   <!-- <app-tips></app-tips> -->
 
   <!-- <div id="mediumtitle">Calcul du Métabolisme de base</div> -->
-
-  <form [formGroup]="cocktailForm" (ngSubmit)="submit()">
+  <!-- [formGroup]="tipsForm"  -->
+  <form>
     <table class="blueTable">
       <tr>
         <td><b> Sexe*</b></td>
         <td width="400px">
-          <input type="radio" formControlName="sexe" value="0" />
+          <input
+            type="radio"
+            name="sexe"
+            [(ngModel)]="sexe"
+            value="0"
+            (change)="calculateMB()"
+          />
           Homme &nbsp;
-          <input type="radio" formControlName="sexe" value="1" />
+          <input
+            type="radio"
+            name="sexe"
+            value="1"
+            [(ngModel)]="sexe"
+            (change)="calculateMB()"
+          />
           Femme
         </td>
       </tr>
       <tr>
         <td><b>Poid* (kg)</b></td>
         <td>
-          <input type="number" formControlName="poids" min="0" max="200" />
+          <input
+            type="number"
+            name="poids"
+            min="0"
+            max="200"
+            [(ngModel)]="poids"
+            (change)="calculateMB()"
+          />
         </td>
       </tr>
       <tr>
-        <td><b>Taille* (cm)</b></td>
+        <td><b>Taille* (m)</b></td>
         <td>
-          <input type="number" formControlName="taille" min="0" max="300" />
+          <input
+            #ctrl_taille
+            type="number"
+            name="taille"
+            min="0"
+            max="300"
+            step=".1"
+            [(ngModel)]="taille"
+            (change)="calculateMB()"
+          />
         </td>
       </tr>
       <tr>
         <td>
           <b> Age* </b>
         </td>
-        <td><input type="number" formControlName="age" min="0" max="120" /></td>
+        <td>
+          <input
+            type="number"
+            name="age"
+            min="0"
+            max="120"
+            [(ngModel)]="age"
+            (change)="calculateMB()"
+          />
+        </td>
       </tr>
       <tr>
         <td>
@@ -62,13 +99,37 @@
           <b> Niveau d'activité (NA)</b>
         </td>
         <td>
-          <input type="radio" formControlName="NAct" value="1.39" />
+          <input
+            type="radio"
+            name="NAct"
+            [(ngModel)]="NAct"
+            value="1.39"
+            (change)="calculateBEJ()"
+          />
           Sédentaire &nbsp;&nbsp;
-          <input type="radio" formControlName="NAct" value="1.59" />
+          <input
+            type="radio"
+            name="NAct"
+            [(ngModel)]="NAct"
+            value="1.59"
+            (change)="calculateBEJ()"
+          />
           Peu actif &nbsp;&nbsp;
-          <input type="radio" formControlName="NAct" value="1.89" />
+          <input
+            type="radio"
+            name="NAct"
+            [(ngModel)]="NAct"
+            value="1.89"
+            (change)="calculateBEJ()"
+          />
           Actif &nbsp;&nbsp;
-          <input type="radio" formControlName="NAct" value="2.5" />
+          <input
+            type="radio"
+            name="NAct"
+            [(ngModel)]="NAct"
+            value="2.5"
+            (change)="calculateBEJ()"
+          />
           Très actif &nbsp;&nbsp;
         </td>
       </tr>
@@ -81,7 +142,7 @@
         <td>
           <ul>
             <li>= MB * NA</li>
-            <li>{{ mb }}</li>
+            <li>{{ bej }}</li>
           </ul>
         </td>
       </tr>

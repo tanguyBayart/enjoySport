@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tips',
+  selector: 'app-tips-tmp',
   templateUrl: './tips.component.html',
-  styleUrls: ['./tips.component.css']
+  styleUrls: ['./tips.component.css'],
 })
-export class TipsComponent implements OnInit {
+export class TipsComponenty implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
