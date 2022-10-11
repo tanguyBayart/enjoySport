@@ -9,69 +9,82 @@
   </div>
   <br />
 
-  <div id="mediumtitle">Calcul du Métabolisme de base</div>
   <div>
-    Votre métabolisme de base (MB) est l’énergie que votre corps dépense au
-    repos pour assurer ses fonctions vitales. <br />
-    Il est calculé à partir de votre âge, de votre poids, ainsi que de votre
-    taille <br /><br />
+    Cette page vous permet de calculer votre apports quotidients optimal en
+    terme de calories
+    <ul>
+      <li>Métabolisme de base en KCAL</li>
+      <li>Besoin Énergétique Journalier (BEJ) en Kcal</li>
+    </ul>
   </div>
-  <form>
-    <!-- [formGroup]="mbForm" -->
-    <table width="80%" border="3">
+  <br />
+  <!-- <app-tips></app-tips> -->
+
+  <!-- <div id="mediumtitle">Calcul du Métabolisme de base</div> -->
+
+  <form [formGroup]="cocktailForm" (ngSubmit)="submit()">
+    <table class="blueTable">
       <tr>
-        <td s>Sexe*</td>
+        <td><b> Sexe*</b></td>
         <td width="400px">
-          <input type="radio" name="sexe" value="0" onchange="calculateMB()" />
+          <input type="radio" formControlName="sexe" value="0" />
           Homme &nbsp;
-          <input type="radio" name="sexe" value="1" onchange="calculateMB()" />
+          <input type="radio" formControlName="sexe" value="1" />
           Femme
         </td>
       </tr>
       <tr>
-        <td>Poid (kg)*</td>
-        <td><input type="number" name="poids" min="0" max="200" /></td>
+        <td><b>Poid* (kg)</b></td>
+        <td>
+          <input type="number" formControlName="poids" min="0" max="200" />
+        </td>
       </tr>
       <tr>
-        <td>Taille (cm)*</td>
-        <td><input type="number" name="taille" min="0" max="300" /></td>
+        <td><b>Taille* (cm)</b></td>
+        <td>
+          <input type="number" formControlName="taille" min="0" max="300" />
+        </td>
       </tr>
       <tr>
-        <td>Age*</td>
-        <td><input type="number" name="age" min="0" max="120" /></td>
+        <td>
+          <b> Age* </b>
+        </td>
+        <td><input type="number" formControlName="age" min="0" max="120" /></td>
       </tr>
       <tr>
-        <td>Métabolisme de base (MB) en KCAL :</td>
+        <td>
+          <div id="mediumtitle">Métabolisme de base (<a href="#">MB</a>)</div>
+        </td>
         <td>{{ mb }}</td>
+      </tr>
+      <tr>
+        <td>
+          <b> Niveau d'activité (NA)</b>
+        </td>
+        <td>
+          <input type="radio" formControlName="NAct" value="1.39" />
+          Sédentaire &nbsp;&nbsp;
+          <input type="radio" formControlName="NAct" value="1.59" />
+          Peu actif &nbsp;&nbsp;
+          <input type="radio" formControlName="NAct" value="1.89" />
+          Actif &nbsp;&nbsp;
+          <input type="radio" formControlName="NAct" value="2.5" />
+          Très actif &nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id="mediumtitle">
+            Besoin Énergétique Journalier (<a href="#">BEJ</a>)
+          </div>
+        </td>
+        <td>
+          <ul>
+            <li>= MB * NA</li>
+            <li>{{ mb }}</li>
+          </ul>
+        </td>
       </tr>
     </table>
   </form>
-
-  <br /><br />
-
-  <div id="mediumtitle">Niveau d'activité (NA)</div>
-
-  <table>
-    <tr>
-      <td>
-        <input type="radio" name="NAct" value="1.39" onchange="calculateMB()" />
-        Sédentaire &nbsp;&nbsp;
-        <input type="radio" name="NAct" value="1.59" onchange="calculateMB()" />
-        Peu actif &nbsp;&nbsp;
-        <input type="radio" name="NAct" value="1.89" onchange="calculateMB()" />
-        Actif &nbsp;&nbsp;
-        <input type="radio" name="NAct" value="2.5" onchange="calculateMB()" />
-        Très actif &nbsp;&nbsp;
-      </td>
-    </tr>
-  </table>
-  <br /><br />
-
-  <div id="mediumtitle">
-    Calcule du BESOIN ÉNERGÉTIQUE JOURNALIER (BEJ) en KCAL
-  </div>
-  <ul>
-    <li>= MB * NA</li>
-    <li>{{ mb }}</li>
-  </ul>
 </div>

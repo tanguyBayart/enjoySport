@@ -6,6 +6,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/liste.png",
       "tasks": [
+        "Ajout de popups de définition dans l'onglets \"Conseils\".",
         "Formulaire d'inscription/authentification/déconnection (Firebase?).",
         "Mise en place du auth gard en fonction de la session courante de l'utilisateur.",
         "Formulaire de saisie/visualisation/modification/suppression des entrainements (CRUD).",
@@ -28,7 +29,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/progressing.png",
       "tasks": [
-        "Ajout d'une rubrique \"tips\" (rythme cardiaque optimal, alimentation, ... ) avec fonctionnalités CRUD </br> Attention à la mise en forme (CSS spécifique) ...",
+        "Mise en place de la rubique \"Conseils\" (rythme cardiaque optimal, alimentation, ... ) avec fonctionnalités CRUD",
         "Modélisation de la BDD (MCD).",
         "Revision et préparation des données (historique).",
         "Création de la BDD (MySQL).",
