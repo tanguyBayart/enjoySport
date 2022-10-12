@@ -6,14 +6,14 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/liste.png",
       "tasks": [
-        "Onglet \"Conseils\" : mise en place de popups explicatives.",
-        "Onglet \"Conseils\" : modifier la font-color de l'IMC en fonction de sa valeur.",
-        "Formulaire d'inscription/authentification/déconnection (Firebase?).",
-        "Mise en place du auth gard en fonction de la session courante de l'utilisateur.",
-        "Formulaire de saisie/visualisation/modification/suppression des entrainements (CRUD).",
-        "Mise en place de graphiques de suivi.",
-        "Ajout d'un nouveau type d'activité varié (marche, étirements, ...)",
-        "Onglet \"Conseils\" : fonctionnalité CRUD (session connectée) ."
+        "Evolution : Onglet \"Conseils\" : mise en place de popups explicatives.",
+        "Evolution : Onglet \"Conseils\" : modifier la font-color de l'IMC en fonction de sa valeur.",
+        "Evolution : Formulaire d'inscription/authentification/déconnection (Firebase?).",
+        "Evolution : Mise en place du auth gard en fonction de la session courante de l'utilisateur.",
+        "Evolution : Formulaire de saisie/visualisation/modification/suppression des entrainements (CRUD).",
+        "Evolution : Mise en place de graphiques de suivi.",
+        "Evolution : Ajout d'un nouveau type d'activité varié (marche, étirements, ...)",
+        "Evolution : Onglet \"Conseils\" : fonctionnalité CRUD (session connectée) ."
       ]
     },
     {
@@ -31,12 +31,12 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/progressing.png",
       "tasks": [
-        "Onglet \"Conseils\" : Ajout de popups de définition/explications.",
-        "Modélisation de la BDD (MCD).",
-        "Revision et préparation des données (historique).",
-        "Création de la BDD (MySQL).",
-        "import des données.",
-        "Cablage avec la BDD."
+        "Evolution : Onglet \"Conseils\" : Ajout de popups de définition/explications.",
+        "Etude : Modélisation de la BDD (MCD).",
+        "Etude : Revision et préparation des données (historique).",
+        "Evolution : Création de la BDD (MySQL).",
+        "Evolution : import des données.",
+        "Evolution : Cablage avec la BDD."
       ]
     },
     {
@@ -45,19 +45,18 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
-        "Onglet \"Conseils\" : Ajout du calcul de l'IMC .",
-        "Rubrique \"Conseils\" (calcul d'indices) mise en place",
+        "Evolution : Onglet \"Conseils\" : Ajout du calcul de l'IMC .",
         "Résolut : Dans l'animation, faire défiler de la première à la dernière ligne.",
         "Résolut : Problème du haut de l'ascenseur de défilement.",
         "Résolut : Problème de double ascenseur de défilement",
         "Résolut : Problème de menu qui ne se rétracte pas après selection d'une catégorie (mobile).",
         "Réfactoring : séparation stricte des pages <i>musculation</i> et <i>cardio</i>.",
-        "Aligner la première colonne du tableau.",
-        "Coller le \"*\" au footer.",
-        "Enlever les bullet point dans l'animation (page d'acceuil).",
+        "Résolut : Aligner la première colonne du tableau.",
+        "Résolut : Coller le \"*\" au footer.",
+        "Résolut : Enlever les bullet point dans l'animation (page d'acceuil).",
         "CI/CD : ordonnancement du déploiement à 00h10 et 12h10.",
-        "Correction du bug de déploiement.",
-        "Migration vers l'hébergeur O2Switch."
+        "Résolut : Correction du bug de déploiement.",
+        "Evolution : Migration vers l'hébergeur O2Switch."
       ]
     }
   ]
