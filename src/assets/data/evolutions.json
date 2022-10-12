@@ -6,12 +6,14 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/liste.png",
       "tasks": [
-        "Ajout de popups de définition dans l'onglets \"Conseils\".",
+        "Onglet \"Conseils\" : mise en place de popups explicatives.",
+        "Onglet \"Conseils\" : modifier la font-color de l'IMC en fonction de sa valeur.",
         "Formulaire d'inscription/authentification/déconnection (Firebase?).",
         "Mise en place du auth gard en fonction de la session courante de l'utilisateur.",
         "Formulaire de saisie/visualisation/modification/suppression des entrainements (CRUD).",
         "Mise en place de graphiques de suivi.",
-        "Ajout d'un nouveau type d'activité varié (marche, étirements, ...)"
+        "Ajout d'un nouveau type d'activité varié (marche, étirements, ...)",
+        "Onglet \"Conseils\" : fonctionnalité CRUD (session connectée) ."
       ]
     },
     {
@@ -20,7 +22,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/warning.png",
       "tasks": [
-        "Bug de génération du livrable lors de l'ordonnancement du déploiement (ticket ouvert)"
+        "Bug : erreur lors de la génération ordonnancée du livrableavant déploiment (ticket ouvert)"
       ]
     },
     {
@@ -29,7 +31,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/progressing.png",
       "tasks": [
-        "Mise en place de la rubique \"Conseils\" (rythme cardiaque optimal, alimentation, ... ) avec fonctionnalités CRUD",
+        "Onglet \"Conseils\" : Ajout de popups de définition/explications.",
         "Modélisation de la BDD (MCD).",
         "Revision et préparation des données (historique).",
         "Création de la BDD (MySQL).",
@@ -43,6 +45,8 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
+        "Onglet \"Conseils\" : Ajout du calcul de l'IMC .",
+        "Rubrique \"Conseils\" (calcul d'indices) mise en place",
         "Résolut : Dans l'animation, faire défiler de la première à la dernière ligne.",
         "Résolut : Problème du haut de l'ascenseur de défilement.",
         "Résolut : Problème de double ascenseur de défilement",

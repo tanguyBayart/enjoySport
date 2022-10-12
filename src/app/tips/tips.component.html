@@ -10,18 +10,17 @@
   <br />
 
   <div>
-    Cette page vous permet de calculer votre apports quotidients optimal en
-    terme de calories
+    Cette page vous permet de calculer différents indicateur sur l'état de votre
+    corps :
     <ul>
-      <li>Métabolisme de base en KCAL</li>
-      <li>Besoin Énergétique Journalier (BEJ) en Kcal</li>
+      <li>Votre métabolisme de base (MB) en KCAL</li>
+      <li>Vore besoin Énergétique Journalier (BEJ) en Kcal</li>
+      <li>Vote indice de masse corporelle</li>
     </ul>
   </div>
   <br />
   <!-- <app-tips></app-tips> -->
 
-  <!-- <div id="mediumtitle">Calcul du Métabolisme de base</div> -->
-  <!-- [formGroup]="tipsForm"  -->
   <form>
     <table class="blueTable">
       <tr>
@@ -90,13 +89,7 @@
       </tr>
       <tr>
         <td>
-          <div id="mediumtitle">Métabolisme de base (<a href="#">MB</a>)</div>
-        </td>
-        <td>{{ mb }}</td>
-      </tr>
-      <tr>
-        <td>
-          <b> Niveau d'activité (NA)</b>
+          <b> Niveau d'activité</b>
         </td>
         <td>
           <input
@@ -136,14 +129,40 @@
       <tr>
         <td>
           <div id="mediumtitle">
-            Besoin Énergétique Journalier (<a href="#">BEJ</a>)
+            Métabolisme de base en Kcal (<a href="#">MB</a>)
+          </div>
+        </td>
+        <td>{{ mb }}</td>
+      </tr>
+
+      <tr>
+        <td>
+          <div id="mediumtitle">
+            Besoin Énergétique Journalier en Kcal (<a href="#">BEJ</a>)
           </div>
         </td>
         <td>
-          <ul>
-            <li>= MB * NA</li>
-            <li>{{ bej }}</li>
-          </ul>
+          {{ bej }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id="mediumtitle">
+            Indice de Masse corporelle en Kg / m² (<a href="#">IMC</a>)<br />
+            <!-- <div>L’OMS définit plusieurs seuils d’alerte :
+              <ul>
+                <li> en dessous de 18,4 kg/m², on considère que la personne est maigre,</li>
+                <li> entre 18,5 et 24,9 kg/m², on considère que la personne a une corpulence "normale",</li>
+                  <li> entre 25 et 29,9 kg/m², on considère que la personne est en surpoids,</li>
+                    <li> entre 30 à 34,9 kg/m², on considère que la personne est en obésité modérée,</li>
+                      <li> entre 35 et 39,9 kg/m², on considère que la personne est en obésité sévère,</li>
+                au-dessus de 40 kg/m², on considère que la personne est en obésité morbide.</li>
+              </ul>
+            </div> -->
+          </div>
+        </td>
+        <td>
+          {{ imc }}
         </td>
       </tr>
     </table>
