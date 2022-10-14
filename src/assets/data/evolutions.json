@@ -6,6 +6,8 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/liste.png",
       "tasks": [
+        "Evolution : menu : regrouper les entrainements (i.e. <i>Entrainement > Musculation > saisie d'un entrainement</i> ou <i>Entrainement > Cardio > visualisation</i>.  ",
+        "Evolution : menu : Connection / Inscription à placer à droite et ajout Profil (Consultation et Déconection) pour un utilisateur connecté.  ",
         "Evolution : Onglet \"Conseils\" : modifier la font-color de l'IMC en fonction de sa valeur.",
         "Evolution : Formulaire d'inscription/authentification/déconnection (Firebase?).",
         "Evolution : Mise en place du auth gard en fonction de la session courante de l'utilisateur.",
@@ -21,7 +23,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/warning.png",
       "tasks": [
-        "Bug : erreur lors de la génération ordonnancée du livrableavant déploiment (ticket ouvert)"
+        "Bug : Infra : Erreur lors de la génération ordonnancée du livrableavant déploiment (ticket ouvert)"
       ]
     },
     {
@@ -43,6 +45,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
+        "Résolut : Onglet \"Conseils\" : Absence d'ascenceur et non visualion de l'IMC calcué (mobile).",
         "Evolution : Onglet \"Conseils\" : mise en place de popups explicatives.",
         "Evolution : Onglet \"Conseils\" : Ajout du calcul de l'IMC .",
         "Résolut : Dans l'animation, faire défiler de la première à la dernière ligne.",

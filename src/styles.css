@@ -1,3 +1,5 @@
+/* this global style.CSS is used by the app*/
+
 /* Scroll bar perso BEGIN*/
 
 ::-webkit-scrollbar {
@@ -148,6 +150,7 @@ footer {
   align-item: center;
   min-height: calc(100% - 50px);
   max-height: calc(100% - 50px);
+  padding-bottom: 4rem;
 }
 
 /* .content img {
