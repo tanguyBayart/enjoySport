@@ -1,0 +1,40 @@
+{
+  "tipsInfos": [
+    {
+      "name": "Niveau d'activité physique",
+      "class": "niveau-activite",
+      "btnClass": "btn-info",
+      "icon": "../assets/images/muscu.png",
+      "infos": [
+        "Le Niveau d'activité physique (NAP)  correspond à l’énergie que l’on dépense sur 24h, y compris le sommeil, les siestes, les positions assises ou debout, les activités professionnelles et/ou sportives, etc.<ul></ul> <li>Si vous êtes sédentaire, votre NAP est compris entre 1 et 1,39</li><li>Si vous êtes peu actif, votre NAP est compris entre 1,4 et 1,59</li><li>Si vous êtes actif, votre NAP est compris entre 1,6 et 1,89</li><li>Si vous êtes très actif, votre NAP est compris entre 1,9 et 2,5</li></ul>     "
+      ]
+    },
+    {
+      "name": "Métabolisme de base",
+      "class": "meta-base",
+      "btnClass": "btn-info",
+      "icon": "../assets/images/muscu.png",
+      "infos": [
+        "Le Métabolisme de base (MB) est exprimé en Kcal (kilocalorie) représente l’énergie que votre corps dépense au repos pour assurer ses fonctions vitales (respiration, digestion, maintien de la température corporelle, système cardio-vasculaire et cérébral). <br/>Pour le calculer, vous avez besoin de connaître: <ul><li> votre âge (A),</li><li> votre poids (P),</li><li> et votre taille (T).</li></ul> On utilise ensuite cette équation :<ul><li>Pour les femmes : MB = 9,740 x P + 172,9 x T – 4,737 x A + 667,051</li><li>Pour les hommes : MB = 13,707 x P + 492,3 x T – 6,673 x A + 77,607</li></ul>"
+      ]
+    },
+    {
+      "name": "Besoin Énergétique Journalier",
+      "class": "energie-journalier",
+      "btnClass": "btn-info",
+      "icon": "../assets/images/muscu.png",
+      "infos": [
+        "Le Besoin Énergétique Journalier (BEJ) est le produit du MB par le NAP.<br/>le résultat est le nombre de Kcal à consommer par jour pour bien fonctionner. <br/>Ce besoin est aussi appelé ration journalière."
+      ]
+    },
+    {
+      "name": "Indice de Masse corporelle",
+      "class": "indice-masse-corporelle",
+      "btnClass": "btn-info",
+      "icon": "../assets/images/muscu.png",
+      "infos": [
+        "L’OMS définit plusieurs seuils d’alerte en fonction de l'indice de ùasse corporelle (IMC) :<ul><li> en dessous de 18,4 kg/m², on considère que la personne est maigre,</li><li> entre 18,5 et 24,9 kg/m², on considère que la personne a une corpulence \"normale\",</li><li> entre 25 et 29,9 kg/m², on considère que la personne est en surpoids,</li><li> entre 30 à 34,9 kg/m², on considère que la personne est en obésité modérée,</li><li> entre 35 et 39,9 kg/m², on considère que la personne est en obésité sévère,</li>au-dessus de 40 kg/m², on considère que la personne est en obésité morbide.</li></ul>..."
+      ]
+    }
+  ]
+}

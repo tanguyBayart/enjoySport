@@ -35,10 +35,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appRoutes } from './app.routes';
 import { CardioViewComponent } from './cardio-view/cardio-view.component';
 import { MuscuViewComponent } from './muscu-view/muscu-view.component';
-import { TipsComponent } from './tips/tips.component';
+import { TipsComponent } from './tips-view/tips-view.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { EvolutionsComponent } from './components/evolutions/evolutions.component';
+import { TipsInfoComponent } from './components/tipsInfo/tipsInfo.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { EvolutionsComponent } from './components/evolutions/evolutions.componen
     CardioViewComponent,
     TipsComponent,
     EvolutionsComponent,
+    TipsInfoComponent,
   ],
   imports: [
     BrowserModule,

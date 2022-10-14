@@ -1,34 +1,34 @@
-<div class="evolutions row">
+<div class="tips row">
   <div
-    *ngFor="let evolution of evolutions; let index = index"
-    class="col col-12 col-md-6 col-lg evolution"
+    *ngFor="let info of tipsInfos; let index = index"
+    class="col col-12 col-md-6 col-lg info"
   >
     <!-- Button trigger modal -->
     <button
       type="button"
-      class="btn {{ evolution!.btnClass }} btn-block m-1"
+      class="btn {{ info!.btnClass }} btn-block m-1"
       data-toggle="modal"
-      [attr.data-target]="'#' + evolution!.class + 'Modal'"
+      [attr.data-target]="'#' + info!.class + 'Modal'"
     >
-      <img width="15" src="{{ evolution.icon }}" style="filter: invert(1)" />
-      <span class="evo-name ml-2">{{ evolution!.name }}</span>
+      <img width="15" src="{{ info.icon }}" style="filter: invert(1)" />
+      <span class="evo-name ml-2">{{ info!.name }}</span>
     </button>
     <!-- !Button trigger modal -->
 
     <!-- Modal -->
     <div
       class="modal fade"
-      id="{{ evolution!.class }}Modal"
+      id="{{ info!.class }}Modal"
       tabindex="-1"
-      aria-labelledby="{{ evolution!.class }}Label"
+      aria-labelledby="{{ info!.class }}Label"
       aria-hidden="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="{{ evolution!.class }}Label">
-              <img width="25" src="{{ evolution.icon }}" /><span class="ml-3">{{
-                evolution!.name
+            <h5 class="modal-title" id="{{ info!.class }}Label">
+              <img width="25" src="{{ info.icon }}" /><span class="ml-3">{{
+                info!.name
               }}</span>
             </h5>
             <button
@@ -43,8 +43,8 @@
           <div class="modal-body">
             <table class="table table-striped">
               <tbody>
-                <tr *ngFor="let task of evolution.tasks; let index = index">
-                  <td [innerHtml]="task"></td>
+                <tr *ngFor="let theInfo of info.infos; let index = index">
+                  <td [innerHtml]="theInfo"></td>
                 </tr>
               </tbody>
             </table>

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TipsComponent } from './tips.component';
+import { TipsComponent } from './tips-view.component';
 
 describe('TipsComponent', () => {
   let component: TipsComponent;
@@ -8,9 +8,8 @@ describe('TipsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TipsComponent ]
-    })
-    .compileComponents();
+      declarations: [TipsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

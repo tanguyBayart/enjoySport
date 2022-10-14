@@ -1,27 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {
-  animate,
-  query,
-  stagger,
-  style,
-  transition,
-  trigger,
-  AnimationEvent,
-} from '@angular/animations';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-import { TrainingService } from '../services/trainingService';
-import { Training } from '../interfaces/training.interface';
-
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { TipsInfoComponent } from '../components/tipsInfo/tipsInfo.component';
+import tips from 'src/assets/data/tips.json';
+import tipsT from 'src/assets/data/tips_test.json';
 @Component({
-  selector: 'app-tips',
-  templateUrl: './tips.component.html',
-  styleUrls: ['./tips.component.css'],
+  selector: 'app-tips-view',
+  templateUrl: './tips-view.component.html',
+  styleUrls: ['./tips-view.component.css'],
 })
 export class TipsComponent implements OnInit {
   tips_title = 'Conseils';
   cheminIcone_build = '../../assets/images/construction.png';
-
+  tipsInfo = tips.tipsInfos;
+  tipsInfoT = tipsT.tipsInfos;
   mb = 0;
   bej = 0;
   imc = 0;

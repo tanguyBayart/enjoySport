@@ -1,0 +1,11 @@
+{
+  "tipsInfos": [
+    {
+      "name": "rigoler",
+      "class": "meta-base-test",
+      "btnClass": "btn-success",
+      "icon": "../assets/images/muscu.png",
+      "infos": ["c'est cool"]
+    }
+  ]
+}
