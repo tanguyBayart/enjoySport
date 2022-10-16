@@ -23,7 +23,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/warning.png",
       "tasks": [
-        "Bug : Infra : Erreur lors de la génération ordonnancée du livrableavant déploiment (ticket ouvert)"
+        "Bug : Infra : Erreur lors de la génération ordonnancée du livrable pendant le déploiment (ticket ouvert)"
       ]
     },
     {
