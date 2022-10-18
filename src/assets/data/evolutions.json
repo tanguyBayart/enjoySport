@@ -32,6 +32,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/progressing.png",
       "tasks": [
+        "Evolution  : Onglet \"Connexion\" : finir les templates.",
         "Evolution  : Onglet \"Vidéos\" : arranger la disposition des vidéos.",
         "Etude : Modélisation de la BDD (MCD).",
         "Etude : Revision et préparation des données (historique).",

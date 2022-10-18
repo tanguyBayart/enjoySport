@@ -50,11 +50,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { EvolutionsComponent } from './components/evolutions/evolutions.component';
 import { TipsInfoComponent } from './components/tipsInfo/tipsInfo.component';
 import { VideosComponent } from './videos/videos.component';
+import { InscriptionComponent } from './session/inscription/inscription.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     TrainingViewComponent,
     WelcomeViewComponent,
     NewsComponent,
@@ -64,7 +64,8 @@ import { VideosComponent } from './videos/videos.component';
     EvolutionsComponent,
     TipsInfoComponent,
     VideosComponent,
-    // InscriptionComponent,
+    AuthComponent,
+    InscriptionComponent,
   ],
   imports: [
     BrowserModule,

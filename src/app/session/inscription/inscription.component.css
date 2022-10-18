@@ -1,0 +1,21 @@
+@import "../../styles.css";
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content mat-card {
+  margin-bottom: 20px;
+  margin-top: 0px;
+  /* width: 25%; */
+}
+
+.card {
+  width: fit-content;
+}

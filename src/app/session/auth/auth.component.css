@@ -9,3 +9,12 @@
   display: flex;
   flex-direction: column;
 }
+
+.content mat-card {
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.card {
+  width: fit-content;
+}
