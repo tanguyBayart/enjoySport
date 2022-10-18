@@ -19,29 +19,37 @@
       <tr>
         <td><b> Sexe*</b></td>
         <td width="400px">
-          <input
-            type="radio"
-            name="sexe"
-            [(ngModel)]="sexe"
-            value="0"
-            (change)="calculateMB()"
-          />
-          Homme &nbsp;
-          <input
-            type="radio"
-            name="sexe"
-            value="1"
-            [(ngModel)]="sexe"
-            (change)="calculateMB()"
-          />
-          Femme
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="sexe"
+              [(ngModel)]="sexe"
+              value="0"
+              (change)="calculateMB()"
+              id="r1"
+            />
+            <label class="form-check-label" for="r1"> Homme </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="sexe"
+              [(ngModel)]="sexe"
+              value="1"
+              (change)="calculateMB()"
+              id="r1"
+            />
+            <label class="form-check-label" for="r1"> Femme </label>
+          </div>
         </td>
       </tr>
       <tr>
         <td><b>Poid* (kg)</b></td>
         <td>
           <input
-            matInput
+            class="form-control"
             type="number"
             name="poids"
             min="0"
@@ -55,7 +63,7 @@
         <td><b>Taille* (m)</b></td>
         <td>
           <input
-            matInput
+            class="form-control"
             #ctrl_taille
             type="number"
             name="taille"
@@ -73,7 +81,7 @@
         </td>
         <td>
           <input
-            matInput
+            class="form-control"
             type="number"
             name="age"
             min="0"

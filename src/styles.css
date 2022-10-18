@@ -423,3 +423,9 @@ body {
 .open-button:hover {
   opacity: 1;
 }
+
+input[type="radio"] {
+  margin-top: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

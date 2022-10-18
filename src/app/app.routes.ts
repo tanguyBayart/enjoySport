@@ -10,8 +10,8 @@ import { VideosComponent } from './videos/videos.component';
 
 export const appRoutes: Routes = [
   { path: 'home', component: WelcomeViewComponent },
-  { path: 'Muscu', component: MuscuViewComponent },
-  { path: 'Cardio', component: CardioViewComponent },
+  { path: 'muscu', component: MuscuViewComponent },
+  { path: 'cardio', component: CardioViewComponent },
   { path: 'tips', component: TipsComponent },
   { path: 'videos', component: VideosComponent },
   { path: 'connect', component: AuthComponent },

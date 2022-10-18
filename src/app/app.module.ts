@@ -27,7 +27,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 // import { MatToolbarModule } from '@angular/material/toolbar';
-// import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 // Charts
 import { ChartsModule } from 'ng2-charts';
@@ -77,7 +77,7 @@ import { InscriptionComponent } from './session/inscription/inscription.componen
     ChartsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     // MatToolbarModule,
-    // MatIconModule,
+    MatIconModule,
     BrowserAnimationsModule,
     MatDialogModule,
     MatInputModule,
