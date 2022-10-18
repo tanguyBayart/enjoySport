@@ -1,0 +1,11 @@
+@import "../../styles.css";
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+}

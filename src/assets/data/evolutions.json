@@ -32,11 +32,14 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/progressing.png",
       "tasks": [
+        "Evolution  : Onglet \"Vidéos\" : arranger la disposition des vidéos.",
         "Etude : Modélisation de la BDD (MCD).",
         "Etude : Revision et préparation des données (historique).",
         "Evolution : Création de la BDD (MySQL).",
         "Evolution : import des données.",
-        "Evolution : Cablage avec la BDD."
+        "Evolution : Cablage avec la BDD.",
+        "Evolution  : Onglet \"Vidéos\" : enregistre les adresses des vidéos dans la BDD.",
+        "Evolution  : Onglet \"Vidéos\" : factoriser les Iframe d'affichage des vidéos."
       ]
     },
     {
@@ -45,6 +48,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
+        "Evolution  : Onglet \"Vidéos\" : Remplace l'onglet \" Actualités\".",
         "Résolut : Onglet \"Conseils\" : Absence d'ascenceur et non visualion de l'IMC calcué (mobile).",
         "Evolution : Onglet \"Conseils\" : mise en place de popups explicatives.",
         "Evolution : Onglet \"Conseils\" : Ajout du calcul de l'IMC .",
