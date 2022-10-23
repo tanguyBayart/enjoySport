@@ -38,8 +38,6 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/progressing.png",
       "tasks": [
-        "Evolution  : Onglet \"Connexion \\ Inscription\" : revue des CSS.",
-        "Evolution  : Onglet \"Connexion\" : finir les templates.",
         "Etude : Modélisation de la BDD (MCD).",
         "Evolution : Création de la BDD (MySQL).",
         "Etude : Revision et préparation des données (historique).",
@@ -53,6 +51,8 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
+        "Evolution  : Onglet \"Connexion \\ Inscription\" : revue des CSS.",
+        "Evolution  : Onglet \"Connexion \\ Inscription\" : finir les templates.",
         "Evolution  : Onglet \"Vidéos\" : Remplace l'onglet \" Actualités\".",
         "Résolut : Onglet \"Conseils\" : Absence d'ascenceur et non visualion de l'IMC calcué (mobile).",
         "Evolution : Onglet \"Conseils\" : mise en place de popups explicatives.",

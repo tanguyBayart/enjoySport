@@ -23,11 +23,27 @@
   width: 180px;
 }
 
+mat-label {
+  margin-top: 15px;
+}
+mat-form-field {
+  margin-bottom: 10px;
+}
+
 .mat-card-content {
   width: 180px;
 }
 
-.button {
+button {
   width: 180px;
   margin-top: 15px;
+  /* background: red; */
+}
+
+input {
+  width: 180px;
+}
+.mat-form-field-infix,
+.mat-input-element {
+  border: 0 !important;
 }

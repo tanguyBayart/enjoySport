@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
@@ -16,11 +17,23 @@ export class InscriptionComponent implements OnInit {
     password2: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private sub: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('### InscriptionComponent ### ngOnInit()');
+  }
 
   public submit(): void {
-    console.log(this.form.getRawValue());
+    console.log('### InscriptionComponent ### submit()');
+    // console.log(this.form.getRawValue());
+    var data = this.form.value;
+
+    console.log('email : ' + data.email);
+    console.log('pwd1 : ' + data.password);
+    console.log('pwd2 : ' + data.password2);
+    console.log('Create user and session');
+    console.log('Redirect to home page');
+
+    this.router.navigate(['/', 'home']);
   }
 }
