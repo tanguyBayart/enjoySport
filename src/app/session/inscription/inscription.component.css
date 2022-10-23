@@ -19,3 +19,17 @@
 .card {
   width: fit-content;
 }
+
+.error {
+  margin-bottom: 100px;
+}
+
+mat-label {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.button {
+  width: 180px;
+  margin-top: 15px;
+}

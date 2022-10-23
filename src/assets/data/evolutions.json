@@ -38,6 +38,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/progressing.png",
       "tasks": [
+        "Evolution  : Onglet \"Connexion \\ Inscription\" : revue des CSS.",
         "Evolution  : Onglet \"Connexion\" : finir les templates.",
         "Etude : Modélisation de la BDD (MCD).",
         "Evolution : Création de la BDD (MySQL).",
