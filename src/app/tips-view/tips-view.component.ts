@@ -16,6 +16,8 @@ export class TipsComponent implements OnInit {
   mb = 0;
   bej = 0;
   imc = 0;
+  fcm = 0;
+  fco = 0;
 
   public MBform: FormGroup;
 
@@ -24,19 +26,8 @@ export class TipsComponent implements OnInit {
   public taille: number = 0;
   public age: number = 0;
   public NAct: number = 1.39;
-  /* public formGroup: FormGroup; */
 
-  /*public tipsForm: FormGroup = this.fb.group({
-    sexe: [0, Validators.required],
-    poids: [0, Validators.required],
-    taille: [0, Validators.required],
-    age: [0, Validators.required],
-    NAct: [1.39, Validators.required],
-  });*/
-
-  constructor(private fb: FormBuilder) {
-    // this.formGroup = new FormGroup();
-  }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
 
@@ -60,6 +51,7 @@ export class TipsComponent implements OnInit {
     // Pour les hommes : MB = 13,707 x P + 492,3 x T – 6,673 x A + 77,607
 
     this.calculateImc();
+    this.calculateFc();
   }
 
   public calculateBEJ(): void {
@@ -79,12 +71,13 @@ export class TipsComponent implements OnInit {
     this.imc = this.poids / (this.taille * this.taille);
   }
 
-  private initForm(): void {
-    /* this.tipsForm = this.fb.group({
-      sexe: [this.sexe, Validators.required],
-      poid: [this.poids, Validators.required],
-      taille: [this.taille, Validators.required],
-      age: [this.age, Validators.required],
-    });*/
+  private initForm(): void {}
+
+  public calculateFc() {
+    // fréquence cardiaque maximale FCM = 220 - this.age
+    // fréquence cardiaque idéale pour brûler les graisses FCO = (220 - this.age) x 0,75
+    console.log('calculateFc()');
+    this.fcm = 220 - this.age;
+    this.fco = (220 - this.age) * 0.75;
   }
 }

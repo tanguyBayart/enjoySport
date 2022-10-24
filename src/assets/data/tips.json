@@ -35,6 +35,15 @@
       "infos": [
         "L’OMS définit plusieurs seuils d’alerte en fonction de l'indice de masse corporelle (IMC) :<ul><li> en dessous de 18,4 kg/m², on considère que la personne est maigre,</li><li> entre 18,5 et 24,9 kg/m², on considère que la personne a une corpulence \"normale\",</li><li> entre 25 et 29,9 kg/m², on considère que la personne est en surpoids,</li><li> entre 30 à 34,9 kg/m², on considère que la personne est en obésité modérée,</li><li> entre 35 et 39,9 kg/m², on considère que la personne est en obésité sévère,</li><li>au-dessus de 40 kg/m², on considère que la personne est en obésité morbide.</li></ul>"
       ]
+    },
+    {
+      "name": "Fréquence cardiaque",
+      "class": "indice-frequence-cardiaque",
+      "btnClass": "btn-info",
+      "icon": "../assets/images/muscu.png",
+      "infos": [
+        "La fréquence cardiaque est le nombre de battements du cœur par minute.<ul><li>La fréquence cardiaque maximal est de : 220 - Age</li><li>La fréquence cardiaque idéale pour brûler les graisses correspond à 75% de la fréquence cardiaque maximale théorique.</li></ul>"
+      ]
     }
   ]
 }

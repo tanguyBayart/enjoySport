@@ -51,6 +51,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
+        "Evolution : Onglet \"Conseils\" : ajout du calcul des fréquence cardiaques maximale et optimale",
         "Evolution  : Infra : Ouverture d'un projet JIRA.",
         "Evolution  : Onglet \"Connexion \\ Inscription\" : revue des CSS.",
         "Evolution  : Onglet \"Connexion \\ Inscription\" : finir les templates.",
