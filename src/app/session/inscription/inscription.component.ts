@@ -31,7 +31,7 @@ export class InscriptionComponent implements OnInit {
     console.log('email : ' + data.email);
     console.log('pwd1 : ' + data.password);
     console.log('pwd2 : ' + data.password2);
-    console.log('Create user and session');
+    console.log('TODO : Create user and session');
     console.log('Redirect to home page');
 
     this.router.navigate(['/', 'home']);

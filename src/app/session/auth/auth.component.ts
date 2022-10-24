@@ -35,7 +35,7 @@ export class AuthComponent implements OnInit {
     // console.log(data);
     console.log(data.email);
     console.log(data.password);
-    console.log('add athentication check and create session');
+    console.log('TODO : add athentication check and create session');
     console.log('Redirect to home page');
 
     this.router.navigate(['/', 'home']);

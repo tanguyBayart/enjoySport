@@ -2,7 +2,6 @@
   <div id="bigtitle">L'application qui vous changera !</div>
 
   <!-- Animation !  -->
-
   <div style="padding-top: 20px" class="anim">
     <div class="w-100 d-flex flew-row flex-justify-content-center">
       <ul
@@ -19,159 +18,9 @@
       </ul>
     </div>
   </div>
-
-  <!-- <div style="padding-top: 20px">
-    <div class="w-100 d-flex flew-row flex-justify-content-center">
-      <ul
-        *ngIf="display"
-        @list
-        (@list.start)="toggle($event)"
-        (@list.done)="toggle($event)"
-      >
-        <li>Ce qui importe, c'est le progrès..</li>
-
-        <li>Si tu détestes recommencer, arrêtes d'abandonner...</li>
-        <li>
-          Il n'est jamais trop tard pour se fixer de nouveaux objectifs...
-        </li>
-        <li>Donc, <b>GO !</b></li>
-      </ul>
-    </div>
-  </div> -->
-
   <!-- Fin de l'animation -->
-
   <br />
-  <!-- <div id="mediumtitle">Suivi des évolutions</div> -->
 
-  <!-- <div>
-    <button class="btn btn-primary" (click)="openDialogTodo()">
-      <img width="15" src="{{ chemin_liste }}" />&nbsp;&nbsp;A faire</button
-    >&nbsp;&nbsp;
-    <button class="btn btn-primary" (click)="openDialogToSolve()">
-      <img width="15" src="{{ chemin_attention }}" />&nbsp;&nbsp; A résoudre</button
-    >&nbsp;&nbsp;
-    <button class="btn btn-primary" (click)="openDialogInProgress()">
-      <img width="15" src="{{ chemin_encours }}" />
-      &nbsp;&nbsp;En cours</button
-    >&nbsp;&nbsp;
-    <button class="btn btn-primary" (click)="openDialogDone()">
-      <img width="15" src="{{ chemin_check }}" /> &nbsp;&nbsp;Fait
-    </button>
-  </div> -->
-
-  <!-- <div width="100%">
-    <table class="blueTable">
-      <tr>
-        <td>
-          <img width="15" src="{{ chemin_liste }}" />&nbsp;&nbsp;<b
-            ><a href="./popups/todo.html" target="_blank"> A faire</a></b
-          >
-        </td>
-        <td>
-          <ul>
-            <li>
-              Formulaire d'inscription/authentification/déconnection (Firebase
-              ?).
-            </li>
-            <li>
-              Mise en place du auth gard en fonction de la session courante de
-              l'utilisateur.
-            </li>
-            <li>
-              Formulaire de saisie/visualisation/modification/suppression des
-              entrainements (CRUD).
-            </li>
-
-            <li>Mise en place de graphiques de suivi.</li>
-            <li>
-              Ajout d'un nouveau type d'activité varié (marche, étirements, ...)
-            </li>
-          </ul>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <img width="15" src="{{ chemin_attention }}" />&nbsp;&nbsp;
-          <b>A résoudre</b>
-        </td>
-        <td>
-          <ul>
-            <li>
-              Bug de génération du livrable lors de l'ordonnancement du
-              déploiement (ticket ouvert)
-            </li>
-            <li>Problème de double ascenseur de défilement.</li>
-            <li>
-              Dans l'animation, faire défiler de la première à la dernière
-              ligne.
-            </li>
-            <li>Problème du haut de l'ascenseur de défilement.</li>
-            <li>
-              Problème de menu qui ne se rétracte pas après selection d'une
-              catégorie (mobile).
-            </li>
-          </ul>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <img width="15" src="{{ chemin_encours }}" />
-          &nbsp;&nbsp;
-          <b>En cours</b>
-        </td>
-        <td>
-          <ul>
-            <li>
-              Modifier la structure du suivi des évolutions :
-              <a
-                href="https://fr.w3docs.com/tools/code-editor/3886"
-                target="_blank"
-                >Tuto w3docs</a
-              >
-            </li>
-            <li>
-              Ajout d'une rubrique "tips" (rythme cardiaque optimal,
-              alimentation, ... ) avec fonctionnalités CRUD
-              <br />Attention à la mise en forme (CSS sécifique) ...
-            </li>
-            <li>Modélisation de la BDD (MCD).</li>
-            <li>Revision et préparation des données (historique).</li>
-            <li>Création de la BDD (MySQL).</li>
-            <li>import des données.</li>
-            <li>Cablage avec la BDD.</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <img width="15" src="{{ chemin_check }}" /> &nbsp;&nbsp; <b>Fait</b>
-        </td>
-        <td>
-          <ul>
-            <li>
-              Réfactoring : séparation stricte des pages <i>musculation</i> et
-              <i>cardio</i>.
-            </li>
-            <li>Aligner la première colonne du tableau.</li>
-            <li>Enlever les bullet point dans l'animation (page d'acceuil).</li>
-            <li>CI/CD : ordonnancement du déploiement à 00h10 et 12h10.</li>
-            <li>Correction du bug de déploiement.</li>
-            <li>Migration vers l'hébergeur O2Switch.</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" align="center">
-          <b>version ==versionDev==,</b> déployée le
-          <b>==dateyyyymmddHHmmss==</b>           
-        </td>
-      </tr>
-    </table>
-  </div>
-   -->
   <table class="blueTable">
     <thead>
       <td align="center">
@@ -185,9 +34,37 @@
     </tr>
     <tr>
       <td align="center">
-        <b>version ==versionDev==,</b> déployée le
+        <b>v.==versionDev==</b>, déployée le
         <b>==dateyyyymmddHHmmss==</b>
-        <!-- EnjoySport <b>v0.58.4</b>, déployée le ==dateyyyymmddHHmmss== -->
+      </td>
+    </tr>
+  </table>
+
+  <br /><br />
+  <table class="blueTable">
+    <thead>
+      <td align="center">
+        <span id="mediumtitle">Suivi des évolutions (New!)</span>
+      </td>
+    </thead>
+    <tr>
+      <td align="center">
+        <a
+          href="https://enjoysport.atlassian.net/jira/software/projects/ES/boards/1"
+          >Accéder à Jira</a
+        >
+        <br />
+        <a
+          href="https://www.idalko.com/fr/guide-utilisateur-intuitif-pour-jira/"
+        >
+          documentation (creer un utilisateur read only?)
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <b>v.==versionDev==</b>, déployée le
+        <b>==dateyyyymmddHHmmss==</b>
       </td>
     </tr>
   </table>

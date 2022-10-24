@@ -39,10 +39,10 @@
       "icon": "../assets/images/progressing.png",
       "tasks": [
         "Etude : Modélisation de la BDD (MCD).",
-        "Evolution : Création de la BDD (MySQL).",
-        "Etude : Revision et préparation des données (historique).",
-        "Evolution : import des données.",
-        "Evolution : Cablage avec la BDD."
+        "Evolution : Création de la BDD MySQL en dev.",
+        "Evolution : Création de la BDD MySQL en prod.",
+        "Etude : Préparation et import des données.",
+        "Evolution : Cablage de l'appli avec la BDD."
       ]
     },
     {
@@ -51,6 +51,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
+        "Evolution  : Infra : Ouverture d'un projet JIRA.",
         "Evolution  : Onglet \"Connexion \\ Inscription\" : revue des CSS.",
         "Evolution  : Onglet \"Connexion \\ Inscription\" : finir les templates.",
         "Evolution  : Onglet \"Vidéos\" : Remplace l'onglet \" Actualités\".",

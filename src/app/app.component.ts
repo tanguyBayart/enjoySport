@@ -97,4 +97,8 @@ export class AppComponent {
   //github
   cheminIcone_GH = '../assets/images/github.png';
   GhHref = 'https://github.com/tanguyBayart/enjoySport';
+
+  cheminIcone_JIRA = '../assets/images/jira.png';
+  JiraHref =
+    'https://enjoysport.atlassian.net/jira/software/projects/ES/boards/1';
 }
