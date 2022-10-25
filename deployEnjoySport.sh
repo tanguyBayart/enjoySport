@@ -1,6 +1,7 @@
 #! /bin/sh
 TZ='Europe/Paris';
 echo "### deployEnjoySport.sh - `date` - Lancement du déploiement de EnjoySport"
+. $HOME/.bashrc
 
 # récupération des sources
 echo "### deployEnjoySport.sh - `date` - récupération de sources"
