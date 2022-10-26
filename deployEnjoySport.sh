@@ -35,7 +35,7 @@ ls -l /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.compon
 
 # build
 echo "### deployEnjoySport.sh - `date` - Génération du livrable"
-/home/iaam4644/EJ2repo/enjoySport/node_modules/.bin/ng build
+/home/iaam4644/EJ2repo/enjoySport/node_modules/.bin/ng build --configuration production
 
 if [[ $? -ne 0 ]]
 then
