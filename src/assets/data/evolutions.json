@@ -26,7 +26,6 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/warning.png",
       "tasks": [
-        "Bug majeur : Infra : Erreur lors de la génération ordonnancée du livrable pendant le déploiment (ticket ouvert)",
         "Ano mineur : Onglet \"Vidéos\" : Message dans la console F12 : <br/> 1) Access to XMLHttpRequest at 'https://play.google.com/log?format=json&hasfast=true&authuser=0' from origin 'https://www.youtube-nocookie.com' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The 'Access-Control-Allow-Origin' header has a value 'http://play.google.com' that is not equal to the supplied origin. <br/> ==> ajouter le plugin https://mybrowseraddon.com/access-control-allow-origin.html?v=0.1.8&type=install <br/> 2) www-embed-player.js:791 GET https://googleads.g.doubleclick.net/pagead/id net::ERR_BLOCKED_BY_CLIENT",
         "Bug mineur : Infra : Mesage d'erreur dans la console cpanel (lockfileVersion)",
         "Bug mineur : Infra : console VS Code : message \"Le nombre de régions pliables est limité à un maximum de 5000. Augmentez l’option de configuration ['Folding Maximum Regions'](command:workbench.action.openSettings?[\"editor.foldingMaximumRegions\"]) pour en activer d’autres."
@@ -51,6 +50,7 @@
       "btnClass": "btn-secondary",
       "icon": "../assets/images/checked.png",
       "tasks": [
+        "Résolut : Infra : Erreur lors de la génération ordonnancée du livrable pendant le déploiment (ticket ouvert)",
         "Evolution : Onglet \"Conseils\" : ajout du calcul des fréquence cardiaques maximale et optimale",
         "Evolution  : Infra : Ouverture d'un projet JIRA.",
         "Evolution  : Onglet \"Connexion \\ Inscription\" : revue des CSS.",
