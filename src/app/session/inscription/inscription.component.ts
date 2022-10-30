@@ -31,9 +31,10 @@ export class InscriptionComponent implements OnInit {
     console.log('email : ' + data.email);
     console.log('pwd1 : ' + data.password);
     console.log('pwd2 : ' + data.password2);
+    console.log('TODO : Control forms fields');
     console.log('TODO : Create user and session');
-    console.log('Redirect to home page');
+    console.log('TOCTIVATE : Redirect to home page');
 
-    this.router.navigate(['/', 'home']);
+    // this.router.navigate(['/', 'home']);
   }
 }

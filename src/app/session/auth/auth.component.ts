@@ -33,12 +33,12 @@ export class AuthComponent implements OnInit {
     //   console.log(data[key]);
     // }
     // console.log(data);
-    console.log(data.email);
-    console.log(data.password);
+    console.log('email : ' + data.email);
+    console.log('password : ' + data.password);
     console.log('TODO : add athentication check and create session');
-    console.log('Redirect to home page');
+    console.log('TOCTIVATE : Redirect to home page');
 
-    this.router.navigate(['/', 'home']);
+    // this.router.navigate(['/', 'home']);
   }
 
   public redirectsubscribe(): void {
