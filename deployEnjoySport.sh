@@ -17,6 +17,9 @@ npm i
 dateD=`date +"%Y-%m-%d à %H:%M"`
 VERSION=`grep version package.json  | cut -d "\"" -f4`
 
+VERSIONBACK=`grep version ../package.json  | cut -d "\"" -f4`
+
+
 echo "### deployEnjoySport.sh - `date` - date de déploiement : " $dateD
 echo "### deployEnjoySport.sh - `date` - date de déploiement : version =" $VERSION
 
@@ -24,7 +27,8 @@ echo "### deployEnjoySport.sh - `date` - date de déploiement : version =" $VERS
 echo  "### deployEnjoySport.sh - `date` - date and version : " $dateD " - " $VERSION
 sed "s/==dateyyyymmddHHmmss==/${dateD}/g" /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html >| /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp1
 sed "s/==versionDev==/$VERSION/g" /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp1 >| /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp2
-cp /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp2 /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html
+sed "s/==versionDevBack==/$VERSIONBACK/g" /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp2 >| /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp3
+cp /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp3 /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html
 
 ls -l /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html
 ls -l /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp1
