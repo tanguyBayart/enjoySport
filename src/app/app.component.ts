@@ -56,6 +56,10 @@ export class AppComponent {
   cheminIcone_o2s = '../assets/images/O2S.jpg';
   o2sHref = 'https://www.o2switch.fr/';
 
+  //wordpresse
+  cheminIcone_wp = '../assets/images/wp.png';
+  wpHref = 'https://fr.wordpress.org/';
+
   //MySQL
   cheminIcone_mysql = '../assets/images/mysql.png';
   mysqlHref = 'https://www.mysql.com/fr/';

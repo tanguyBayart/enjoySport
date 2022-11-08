@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+
 import {
   animate,
   query,
@@ -10,6 +11,8 @@ import {
 } from '@angular/animations';
 
 import evolutions from '../../assets/data/evolutions.json';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-welcome-view',
   templateUrl: './welcome-view.component.html',
@@ -41,8 +44,11 @@ import evolutions from '../../assets/data/evolutions.json';
 export class WelcomeViewComponent implements OnInit {
   public display = true;
   public evolutions = evolutions.evos;
+  public html: string;
+  public datas: any;
+  public data_presentation: any;
 
-  constructor() {}
+  constructor(private http: HttpClient, public sanitizer: DomSanitizer) {}
 
   public toggle(event: AnimationEvent) {
     if (event.phaseName === 'done') {
@@ -50,29 +56,30 @@ export class WelcomeViewComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const url = 'http://enjoysportback.enjoysport.org/wp-json/';
+    this.http.get(url).subscribe((data) => {
+      // console.log(data);
+    });
+    this.http.get(url + 'wp/v2/pages?slug=sample-page').subscribe((data) => {
+      // console.log(data);
+      this.html = data[0].content.rendered;
+      // console.log(this.html);
+    });
+    this.http.get(url + 'wp/v2/link-footer').subscribe((data) => {
+      // console.log(data);
+      this.datas = data;
+      // console.log(this.datas);
+    });
+
+    this.http.get(url + 'wp/v2/pages?slug=vive-le-sport').subscribe((data) => {
+      this.data_presentation = data[0].content.rendered;
+      // console.log(this.datas);
+    });
+  }
+
   title = 'Enjoy Sport !';
   cheminImageAppli = '../assets/images/logo.png';
-
-  openDialogTodo() {
-    /*this.dialogRef.open(PopupComponent);*/
-  }
-
-  openDialogToSolve() {
-    /*this.dialogRef.open(PopupComponent);*/
-  }
-
-  openDialogInProgress() {
-    /*this.dialogRef.open(PopupComponent);*/
-  }
-
-  openDialogDone() {
-    /*this.dialogRef.open(PopupComponent);*/
-  }
-
-  // AWS
-  // cheminIcone_aws= '../assets/images/icone_aws.png';
-  // awsHref = 'https://www.google.com/aclk?sa=L&ai=DChcSEwj0_dzOua_tAhXEhNUKHeRwA4UYABAAGgJ3cw&ae=2&sig=AOD64_0qqp-W2xMtP9COYR6tM-sACVPDpQ&q&adurl&ved=2ahUKEwiJktXOua_tAhWlDGMBHcKZDccQ0Qx6BAgKEAE';
 
   //MySQL
   cheminIcone_mysql = '../assets/images/mysql.png';

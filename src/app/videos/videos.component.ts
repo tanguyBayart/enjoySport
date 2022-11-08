@@ -10,7 +10,24 @@ import tipsT from 'src/assets/data/tips_test.json';
   styleUrls: ['./videos.component.css'],
 })
 export class VideosComponent implements OnInit {
-  tips_title = 'Vidéos';
+  videos_exercices = [
+    'x9X8D4is59Y',
+    'l0l_liJX2Xc',
+    'XwhanhV0zFU',
+    'P22Oy2xjatg',
+  ];
+
+  videos_alimentation = ['yiYNQq7FEKs', 'O2AB69aofrw', '8nYVEqNzFZY'];
+
+  videos_anglais = [
+    'b7cl7sn17bo',
+    '29XU4Tdis4Y',
+    'IuI-e-geeZI',
+    'pKoQydKDJJw',
+    '0cF4crYUinE',
+  ];
+
+  vids_title = 'Vidéos';
   cheminIcone_build = '../../assets/images/construction.png';
 
   constructor() {}

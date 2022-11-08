@@ -51,6 +51,7 @@ import { EvolutionsComponent } from './components/evolutions/evolutions.componen
 import { TipsInfoComponent } from './components/tipsInfo/tipsInfo.component';
 import { VideosComponent } from './videos/videos.component';
 import { InscriptionComponent } from './session/inscription/inscription.component';
+import { VideoYtComponent } from './components/video-yt/video-yt.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { InscriptionComponent } from './session/inscription/inscription.componen
     VideosComponent,
     AuthComponent,
     InscriptionComponent,
+    VideoYtComponent,
   ],
   imports: [
     BrowserModule,

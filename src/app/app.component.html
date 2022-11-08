@@ -55,7 +55,24 @@
             >Home</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href=""
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Entrainements
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item nav-link" routerLink="cardio">Cardio</a>
+            <a class="dropdown-item nav-link" routerLink="muscu">Musculation</a>
+          </div>
+        </li>
+        <!-- <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="cardio"
             >Cardio</a
           >
@@ -64,7 +81,7 @@
           <a class="nav-link" routerLinkActive="active" routerLink="muscu"
             >Musculation</a
           >
-        </li>
+        </li> -->
 
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="tips"
@@ -109,6 +126,11 @@
   <a href="{{ o2sHref }}" target="_blank">
     <img width="25" src="{{ cheminIcone_o2s }}" title="O2switch" /> </a
   >&nbsp;
+
+  <a href="{{ wpHref }}" target="_blank">
+    <img width="25" src="{{ cheminIcone_wp }}" title="O2switch" /> </a
+  >&nbsp;
+
   <a href="{{ mysqlHref }}" target="_blank">
     <img width="25" src="{{ cheminIcone_mysql }}" title="MySql" /> </a
   >&nbsp;
@@ -127,12 +149,9 @@
     <img width="25" src="{{ cheminIcone_JIRA }}" title="Jira software" /> </a
   >&nbsp;
 
-  <!-- cheminIcone_JIRA = '../assets/images/jira.png';
-  JiraHref = -->
-
-  <a href="{{ fbHref }}" target="_blank">
+  <!-- <a href="{{ fbHref }}" target="_blank">
     <img width="25" src="{{ cheminIcone_fb }}" title="FireBase" /> </a
-  >&nbsp;
+  >&nbsp; -->
 
   <a href="{{ i8Href }}" target="_blank">
     <img width="25" src="{{ cheminIcone_I8 }}" title="Icons8" /> </a

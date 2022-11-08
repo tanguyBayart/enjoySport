@@ -429,3 +429,8 @@ input[type="radio"] {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.img-fluid img {
+  min-width: 100%;
+  height: auto;
+}

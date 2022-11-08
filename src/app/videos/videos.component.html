@@ -1,5 +1,5 @@
 <div class="content" role="main">
-  <div id="bigtitle">{{ tips_title }}</div>
+  <div id="bigtitle">{{ vids_title }}</div>
 
   <div>
     Cette section références quelques videos qui traitent chacune d'un objectif
@@ -8,134 +8,10 @@
   </div>
   <br />
 
-  <div id="mediumtitle">Vidéos en français</div>
+  <div id="mediumtitle">Entainements spécifiques (FR)</div>
 
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/x9X8D4is59Y/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
+  <video-yt *ngFor="let vid_id of videos_exercices" [id]="vid_id"></video-yt>
 
-  <iframe
-    width="50%"
-    height="100%"
-    src="https://www.youtube-nocookie.com/embed/l0l_liJX2Xc/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-  <!-- <iframe
-    width="100%"
-    height="100%"
-    src="https://www.youtube.com/embed/_Ten9lsUU7s"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe> -->
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/XwhanhV0zFU/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-
-  <iframe
-    width="100%"
-    height="100%"
-    src="https://www.youtube.com/embed/P22Oy2xjatg/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/0cF4crYUinE/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-  <div id="mediumtitle">Alimentation (FR)</div>
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/yiYNQq7FEKs/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/O2AB69aofrw/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/8nYVEqNzFZY"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-
-  <div id="mediumtitle">Vidéos en anglais</div>
-
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/b7cl7sn17bo/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/29XU4Tdis4Y/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-
-  <iframe
-    width="100%"
-    height="100%"
-    src="https://www.youtube.com/embed/IuI-e-geeZI/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-
-  <iframe
-    width="100%"
-    height="100%"
-    src="https://www.youtube.com/embed/pKoQydKDJJw/"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
+  <div id="mediumtitle">Alimentation</div>
+  <video-yt *ngFor="let vid_id of videos_alimentation" [id]="vid_id"></video-yt>
 </div>

@@ -143,17 +143,6 @@ text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
 background: text rgb(102, 102, 102);
 } */
 
-#bigtitle {
-  font-size: 30px;
-  color: transparent;
-  background: #666666;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
-  line-height: 35px;
-}
-
 footer {
   width: 80%;
   text-align: center;
@@ -215,3 +204,6 @@ a:hover {
 
     }
   }*/
+.img-fluid img {
+  min-width: 100%;
+}
