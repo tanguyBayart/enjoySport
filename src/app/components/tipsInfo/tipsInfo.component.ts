@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import tipsInfos from '../../../assets/data/tips.json';
+// import tipsInfos from '../../../assets/data/tips.json';
 
 @Component({
   selector: 'app-tips-info',

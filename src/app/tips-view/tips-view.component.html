@@ -9,7 +9,6 @@
 
   <div>
     <app-tips-info [tipsInfos]="tipsInfo"></app-tips-info>
-    <!-- <app-tips-info [tipsInfos]="tipsInfoT"></app-tips-info> -->
   </div>
 
   <br />
@@ -17,8 +16,8 @@
   <form>
     <table class="blueTable">
       <tr>
-        <td><b> Sexe*</b></td>
-        <td width="400px">
+        <td><strong> Sexe*</strong></td>
+        <td>
           <div class="form-check">
             <input
               class="form-check-input"
@@ -46,7 +45,7 @@
         </td>
       </tr>
       <tr>
-        <td><b>Poid* (kg)</b></td>
+        <td><strong>Poid* (kg)</strong></td>
         <td>
           <input
             class="form-control"
@@ -60,7 +59,7 @@
         </td>
       </tr>
       <tr>
-        <td><b>Taille* (m)</b></td>
+        <td><strong>Taille* (m)</strong></td>
         <td>
           <input
             class="form-control"
@@ -77,7 +76,7 @@
       </tr>
       <tr>
         <td>
-          <b> Age* </b>
+          <strong> Age* </strong>
         </td>
         <td>
           <input
@@ -93,7 +92,7 @@
       </tr>
       <tr>
         <td>
-          <b><i>Niveau d'activité physique*</i></b>
+          <strong><em>Niveau d'activité physique*</em></strong>
         </td>
         <td>
           <input
@@ -133,7 +132,7 @@
       <tr>
         <td>
           <div>
-            <b><i>Métabolisme de base</i></b>
+            <strong><em>Métabolisme de base</em></strong>
           </div>
         </td>
         <td>{{ mb }}</td>
@@ -142,7 +141,7 @@
       <tr>
         <td>
           <div>
-            <b><i>Besoin Énergétique Journalier</i></b>
+            <strong><em>Besoin Énergétique Journalier</em></strong>
           </div>
         </td>
         <td>
@@ -152,30 +151,27 @@
       <tr>
         <td>
           <div>
-            <b><i>Indice de Masse corporelle</i></b>
+            <strong><em>Indice de Masse corporelle</em></strong>
           </div>
         </td>
         <td>
           {{ imc }}
         </td>
       </tr>
-      <!-- rythme cadiaque max-->
       <tr>
         <td>
           <div>
-            <b><i>Fréquence cardiaque maximale.</i></b>
+            <strong><em>Fréquence cardiaque maximale.</em></strong>
           </div>
         </td>
         <td>
           {{ fcm }}
         </td>
       </tr>
-
-      <!-- rythme cadiaque optimal-->
       <tr>
         <td>
           <div>
-            <b><i>Fréquence cardiaque idéale pour brûler les graisses </i></b>
+            <strong><em>Fréquence cardiaque idéale </em></strong>
           </div>
         </td>
         <td>
@@ -184,5 +180,4 @@
       </tr>
     </table>
   </form>
-  <!-- fin IMC -->
 </div>

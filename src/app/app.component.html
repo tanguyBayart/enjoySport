@@ -1,31 +1,13 @@
-<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
 
 <div class="header">
   <!-- Toolbar -->
   <div class="toolbar" role="banner">
-    <img width="150" src="{{ cheminImageAppli }}" />
-
-    <!-- 1er essai :  nav bar non réactive-->
-    <!-- <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-      <div class="container">
-          <ul class="nav navbar-nav navbar-toggler navbar-expand-mds" routerLinkActive="active">
-              <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="cardio">Cardio</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="muscu">Musculation</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="connect">Connection / Inscription</a></li>
-          </ul>
-      </div>
-    </nav> -->
+    <img width="150" src="{{ cheminImageAppli }}" alt="EnjoySport logo" />
   </div>
 
-  <!-- 2eme essai :  nav bar  réactive !!!-->
   <nav class="navbar navbar-fixed-top navbar-expand-md navbar-light bg-light">
-    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     <button
       class="navbar-toggler"
       type="button"
@@ -40,16 +22,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto" routerLinkActive="active">
-        <!-- <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li> -->
-        <!-- {{ current=='home'?'active':''}} -->
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="home"
             >Home</a
@@ -72,17 +44,6 @@
             <a class="dropdown-item nav-link" routerLink="muscu">Musculation</a>
           </div>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="cardio"
-            >Cardio</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="muscu"
-            >Musculation</a
-          >
-        </li> -->
-
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="tips"
             >Conseils</a
@@ -95,21 +56,12 @@
           >
         </li>
 
-        <!-- <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="news">
-            Actualités</a
-          >
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="connect">
             Connection / Inscription
           </a>
         </li>
       </ul>
-      <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
     </div>
   </nav>
 </div>
@@ -121,47 +73,93 @@
 
 <footer>
   <div class="prefooter" width="100%" align="center" le="padding-bottom: 20px">
-    <b>* Sénérité... Dynamisme... Bonheur... Faites du sport!</b>
+    <strong>* Sénérité... Dynamisme... Bonheur... Faites du sport!</strong>
   </div>
   <a href="{{ o2sHref }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_o2s }}" title="O2switch" /> </a
+    <img
+      width="25"
+      src="{{ cheminIcone_o2s }}"
+      title="O2switch"
+      alt="O2switch"
+    /> </a
   >&nbsp;
 
   <a href="{{ wpHref }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_wp }}" title="O2switch" /> </a
+    <img
+      width="25"
+      src="{{ cheminIcone_wp }}"
+      title="WordPress"
+      alt="WordPress"
+    /> </a
   >&nbsp;
 
   <a href="{{ mysqlHref }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_mysql }}" title="MySql" /> </a
+    <img
+      width="25"
+      src="{{ cheminIcone_mysql }}"
+      title="MySql"
+      alt="MySql"
+    /> </a
   >&nbsp;
   <a href="{{ apacheHref }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_apache }}" title="Apache" /> </a
+    <img
+      width="25"
+      src="{{ cheminIcone_apache }}"
+      title="Apache"
+      alt="Apache"
+    /> </a
   >&nbsp;
   <a href="{{ angularHref }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_angular }}" title="Angular" /> </a
+    <img
+      width="25"
+      src="{{ cheminIcone_angular }}"
+      title="Angular"
+      alt="Angular"
+    /> </a
   >&nbsp;
 
   <a href="{{ GhHref }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_GH }}" title="Github" /> </a
+    <img
+      width="25"
+      src="{{ cheminIcone_GH }}"
+      title="Github"
+      alt="Github"
+    /> </a
   >&nbsp;
 
   <a href="{{ JiraHref }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_JIRA }}" title="Jira software" /> </a
+    <img
+      width="25"
+      src="{{ cheminIcone_JIRA }}"
+      title="Jira software"
+      alt="Jira software"
+    /> </a
   >&nbsp;
-
-  <!-- <a href="{{ fbHref }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_fb }}" title="FireBase" /> </a
-  >&nbsp; -->
 
   <a href="{{ i8Href }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_I8 }}" title="Icons8" /> </a
+    <img
+      width="25"
+      src="{{ cheminIcone_I8 }}"
+      title="Icons8"
+      alt="Icons8"
+    /> </a
   >&nbsp;
 
-  <!-- contriuteurs -->
   <a href="{{ wmMail }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_wm }}" title="Webmaster" /> </a
+    <img
+      width="25"
+      src="{{ cheminIcone_wm }}"
+      title="Webmaster"
+      alt="Webmaster"
+    /> </a
   >&nbsp;
+
   <a href="{{ wdMail }}" target="_blank">
-    <img width="25" src="{{ cheminIcone_wd }}" title="Webdesigner" />
+    <img
+      width="25"
+      src="{{ cheminIcone_wd }}"
+      title="Webdesigner"
+      alt="Webdesigner"
+    />
   </a>
 </footer>

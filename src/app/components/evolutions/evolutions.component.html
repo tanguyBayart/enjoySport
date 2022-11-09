@@ -10,7 +10,12 @@
       data-toggle="modal"
       [attr.data-target]="'#' + evolution!.class + 'Modal'"
     >
-      <img width="15" src="{{ evolution.icon }}" style="filter: invert(1)" />
+      <img
+        width="15"
+        src="{{ evolution.icon }}"
+        style="filter: invert(1)"
+        alt="Evolutions"
+      />
       <span class="evo-name ml-2">{{ evolution!.name }}</span>
     </button>
     <!-- !Button trigger modal -->
@@ -27,9 +32,11 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="{{ evolution!.class }}Label">
-              <img width="25" src="{{ evolution.icon }}" /><span class="ml-3">{{
-                evolution!.name
-              }}</span>
+              <img
+                width="25"
+                src="{{ evolution.icon }}"
+                alt="Evolutions"
+              /><span class="ml-3" alt="Evolutions">{{ evolution!.name }}</span>
             </h5>
             <button
               type="button"

@@ -3,25 +3,12 @@
 
   <br /><br />
   <div width="100%">
-    <img width="50" src="{{ cheminIcone_build }}" />
+    <img width="50" src="{{ cheminIcone_build }}" alt="En construction" />
     Site en construction !
-    <img width="50" src="{{ cheminIcone_build }}" />
+    <img width="50" src="{{ cheminIcone_build }}" alt="En construction" />
   </div>
   <br />
 
-  <!-- <div>
-    <canvas
-      baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
-      [options]="barChartOptions"
-      [legend]="barChartLegend"
-      [chartType]="barChartType"
-    >
-    </canvas>
-  </div> -->
-
-  <!-- form : begin -->
   <div>
     <form [formGroup]="trainingForm" (ngSubmit)="submit()">
       <div class="form-group d-flex flex-column">
@@ -42,10 +29,6 @@
             <label>Nom</label>
             <input formControlName="name" type="text" />
           </div>
-          <!-- <div class="form-group d-flex flex-column">
-            <label>Quantité</label>
-            <input formControlName="quantity" type="number" />
-          </div> -->
         </div>
       </div>
       <div class="actions">

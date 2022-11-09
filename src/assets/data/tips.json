@@ -42,7 +42,7 @@
       "btnClass": "btn-info",
       "icon": "../assets/images/muscu.png",
       "infos": [
-        "La fréquence cardiaque est le nombre de battements du cœur par minute.<ul><li>La fréquence cardiaque maximal est de : 220 - Age</li><li>La fréquence cardiaque idéale pour brûler les graisses correspond à 75% de la fréquence cardiaque maximale théorique.</li></ul>"
+        "La fréquence cardiaque est le nombre de battements du cœur par minute.<ul><li><strong>La fréquence cardiaque maximale</strong> est de : 220 - Age</li><li><strong>La fréquence cardiaque idéale</strong> pour brûler les graisses correspond à 75% de la fréquence cardiaque maximale théorique.</li></ul>"
       ]
     }
   ]
