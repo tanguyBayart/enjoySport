@@ -38,7 +38,7 @@ export class AppComponent {
     this.router.events
       .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
       .subscribe((e) => {
-        $('#navbarSupportedContent').collapse('hide');
+        // $('#navbarSupportedContent').collapse('hide');
       });
   }
 

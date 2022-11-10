@@ -1,19 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Training } from '../interfaces/training.interface';
-import { Trainings } from '../interfaces/trainings.interface';
-import {} from '../interfaces/training.interface';
-
-import { TrainingService } from '../services/trainingService';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Training } from '../../interfaces/training.interface';
+import { TrainingService } from '../../services/trainingService';
 
 @Component({
-  selector: 'app-training-view',
-  templateUrl: './training-view.component.html',
-  styleUrls: ['./training-view.component.css'],
+  selector: 'app-muscu-view',
+  templateUrl: './muscu-view.component.html',
+  styleUrls: ['./muscu-view.component.css'],
 })
-export class TrainingViewComponent implements OnInit {
-  //en traveaux
+export class MuscuViewComponent implements OnInit {
   cheminIcone_build = '../../assets/images/construction.png';
   training_type = "type d'entrainement";
   training_todo = 'A implémenter';

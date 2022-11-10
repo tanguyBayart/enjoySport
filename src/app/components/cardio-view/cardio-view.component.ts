@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Training } from '../interfaces/training.interface';
-import { TrainingService } from '../services/trainingService';
+import { Training } from '../../interfaces/training.interface';
+import { TrainingService } from '../../services/trainingService';
 
 @Component({
   selector: 'app-cardio-view',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { TipsInfoComponent } from '../components/tipsInfo/tipsInfo.component';
+import { TipsInfoComponent } from '../tipsInfo/tipsInfo.component';
 import tips from 'src/assets/data/tips.json';
 import tipsT from 'src/assets/data/tips_test.json';
 @Component({

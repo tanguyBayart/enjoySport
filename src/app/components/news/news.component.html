@@ -12,12 +12,12 @@
   <table class="blueTable">
     <tr *ngFor="let resultat of resultats">
       <td>
-        <a href="{{ resultat.url }}" target="_blank"
+        <a href="{{ resultat.url }}" target="_blank" rel="noopener"
           ><img width="100" src="{{ resultat.image }}" alt="Image" /> /></a
         >
       </td>
       <td>
-        <a href="{{ resultat.url }}" target="_blank"
+        <a href="{{ resultat.url }}" target="_blank" rel="noopener"
           ><strong>{{ resultat.title }}</strong>
         </a>
         -
@@ -43,6 +43,8 @@
 
   <br /><strong
     >API proposée par
-    <a href="{{ url_mediastack }}" target="_blank">Media Stack</a></strong
+    <a href="{{ url_mediastack }}" target="_blank" rel="noopener"
+      >Media Stack</a
+    ></strong
   ><br />
 </div>

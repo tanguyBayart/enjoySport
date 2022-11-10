@@ -10,7 +10,7 @@ import {
   AnimationEvent,
 } from '@angular/animations';
 
-import evolutions from '../../assets/data/evolutions.json';
+import evolutions from '../../../assets/data/evolutions.json';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({

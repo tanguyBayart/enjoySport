@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Console } from 'console';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',

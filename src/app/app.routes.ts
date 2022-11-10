@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { AuthComponent } from './session/auth/auth.component';
 import { InscriptionComponent } from './session/inscription/inscription.component';
-import { CardioViewComponent } from './cardio-view/cardio-view.component';
-import { MuscuViewComponent } from './muscu-view/muscu-view.component';
-import { NewsComponent } from './news/news.component';
-import { TipsComponent } from './tips-view/tips-view.component';
-import { WelcomeViewComponent } from './welcome-view/welcome-view.component';
-import { VideosComponent } from './videos/videos.component';
+import { CardioViewComponent } from './components/cardio-view/cardio-view.component';
+import { MuscuViewComponent } from './components/muscu-view/muscu-view.component';
+import { NewsComponent } from './components/news/news.component';
+import { TipsComponent } from './components/tips-view/tips-view.component';
+import { WelcomeViewComponent } from './components/welcome-view/welcome-view.component';
+import { VideosComponent } from './components/videos/videos.component';
 
 export const appRoutes: Routes = [
   { path: 'home', component: WelcomeViewComponent },
