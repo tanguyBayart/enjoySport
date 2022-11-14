@@ -29,7 +29,8 @@ sed "s/==dateyyyymmddHHmmss==/${dateD}/g" /home/iaam4644/EJ2repo/enjoySport/src/
 sed "s/==versionDev==/$VERSION/g" /home/iaam4644/EJ2repo/enjoySport/src/app/components/welcome-view/welcome-view.component.html.tmp1 >| /home/iaam4644/EJ2repo/enjoySport/src/app/components/welcome-view/welcome-view.component.html.tmp2
 sed "s/==versionDevBack==/$VERSIONBACK/g" /home/iaam4644/EJ2repo/enjoySport/src/app/components/welcome-view/welcome-view.component.html.tmp2 >| /home/iaam4644/EJ2repo/enjoySport/src/app/components/welcome-view/welcome-view.component.html.tmp3
 sed "s/==dateBack==/$DATEBACK/g" /home/iaam4644/EJ2repo/enjoySport/src/app/components/welcome-view/welcome-view.component.html.tmp3 >| /home/iaam4644/EJ2repo/enjoySport/src/app/components/welcome-view/welcome-view.component.html.tmp4
-cp /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html.tmp4 /home/iaam4644/EJ2repo/enjoySport/src/app/welcome-view/welcome-view.component.html
+
+cp /home/iaam4644/EJ2repo/enjoySport/src/app/components/welcome-view/welcome-view.component.html.tmp4 /home/iaam4644/EJ2repo/enjoySport/src/app/components/welcome-view/welcome-view.component.html
 
 # build
 echo "### deployEnjoySport.sh - `date` - Génération du livrable"
