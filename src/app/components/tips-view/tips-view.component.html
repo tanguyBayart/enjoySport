@@ -92,7 +92,7 @@
       </tr>
       <tr>
         <td>
-          <strong><em>Niveau d'activité physique*</em></strong>
+          <strong>Niveau d'activité physique*</strong>
         </td>
         <td>
           <input
@@ -132,7 +132,7 @@
       <tr>
         <td>
           <div>
-            <strong><em>Métabolisme de base</em></strong>
+            <strong>Métabolisme de base</strong>
           </div>
         </td>
         <td>{{ mb }}</td>
@@ -141,7 +141,7 @@
       <tr>
         <td>
           <div>
-            <strong><em>Besoin Énergétique Journalier</em></strong>
+            <strong>Besoin Énergétique Journalier</strong>
           </div>
         </td>
         <td>
@@ -151,7 +151,7 @@
       <tr>
         <td>
           <div>
-            <strong><em>Indice de Masse corporelle</em></strong>
+            <strong>Indice de Masse corporelle</strong>
           </div>
         </td>
         <td>
@@ -161,7 +161,7 @@
       <tr>
         <td>
           <div>
-            <strong><em>Fréquence cardiaque maximale</em></strong>
+            <strong>Fréquence cardiaque maximale</strong>
           </div>
         </td>
         <td>
@@ -171,11 +171,83 @@
       <tr>
         <td>
           <div>
-            <strong><em>Fréquence cardiaque idéale</em></strong>
+            <strong>Fréquence cardiaque idéale</strong>
           </div>
         </td>
         <td>
           {{ fco }}
+        </td>
+      </tr>
+    </table>
+    <br />
+
+    <!-- Pression artérielle -->
+    <table class="blueTable">
+      <tr>
+        <td>
+          <strong
+            >Pression diastolique* (
+            <img
+              src="{{ cheminIcone_info }}"
+              width="15"
+              title="La pression diastolique correspond à la tension artérielle mesurée lors de la phase de relâchement du cœur."
+            />
+            )
+          </strong>
+        </td>
+        <td>
+          <input
+            class="form-control"
+            type="number"
+            name="diastolique"
+            min="0"
+            max="200"
+            [(ngModel)]="pad"
+            (change)="calculatePA()"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong
+            >Pression artérielle systolique* (<a href="#"
+              ><img
+                width="15"
+                src="{{ cheminIcone_info }}"
+                title="La pression systolique correspond à la contraction du ventricule qui permet l'éjection du sang dans l'aorte puis vers les artères.
+La pression y est maximale."
+                alt="info" /></a
+            >)</strong
+          >
+        </td>
+        <td>
+          <input
+            class="form-control"
+            type="number"
+            name="systolique"
+            min="0"
+            max="300"
+            [(ngModel)]="pas"
+            (change)="calculatePA()"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <strong
+              >Pression artérielle moyenne (<a href="#"
+                ><img
+                  width="15"
+                  src="{{ cheminIcone_info }}"
+                  title="La pression artérielle est mesurée en mm/Hg (millimètres de mercure), une mesure de pression standard."
+                  alt="info" /></a
+              >)</strong
+            >
+          </div>
+        </td>
+        <td>
+          {{ pa }}
         </td>
       </tr>
     </table>

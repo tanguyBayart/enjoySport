@@ -11,6 +11,8 @@ import tipsT from 'src/assets/data/tips_test.json';
 export class TipsComponent implements OnInit {
   tips_title = 'Conseils';
   cheminIcone_build = '../../assets/images/construction.png';
+  cheminIcone_info = '../assets/images/info.png';
+
   tipsInfo = tips.tipsInfos;
   tipsInfoT = tipsT.tipsInfos;
   mb = 0;
@@ -18,6 +20,9 @@ export class TipsComponent implements OnInit {
   imc = 0;
   fcm = 0;
   fco = 0;
+  pa = 0; //pression artérielle
+  pad = 0; //pression artérielle diastolique
+  pas = 0; //pression artérielle systolique
 
   public MBform: FormGroup;
 
@@ -54,5 +59,14 @@ export class TipsComponent implements OnInit {
   public calculateFc() {
     this.fcm = 220 - this.age;
     this.fco = (220 - this.age) * 0.75;
+  }
+
+  public calculatePA(): void {
+    console.log('################### calculatePA called######################');
+    console.log('PAD = ' + this.pad);
+    console.log('PAS = ' + this.pas);
+
+    this.pa = (2 * this.pad + this.pas) / 3;
+    console.log('PA = ' + this.pa);
   }
 }
