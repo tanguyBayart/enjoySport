@@ -52,6 +52,7 @@ import { TipsInfoComponent } from './components/tipsInfo/tipsInfo.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { InscriptionComponent } from './session/inscription/inscription.component';
 import { VideoYtComponent } from './components/video-yt/video-yt.component';
+import { InfoBulleComponent } from './components/info-bulle/info-bulle.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { VideoYtComponent } from './components/video-yt/video-yt.component';
     AuthComponent,
     InscriptionComponent,
     VideoYtComponent,
+    InfoBulleComponent,
   ],
   imports: [
     BrowserModule,

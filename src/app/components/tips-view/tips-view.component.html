@@ -186,13 +186,14 @@
       <tr>
         <td>
           <strong
-            >Pression diastolique* (
-            <img
-              src="{{ cheminIcone_info }}"
-              width="15"
-              title="La pression diastolique correspond à la tension artérielle mesurée lors de la phase de relâchement du cœur."
-            />
-            )
+            >Pression diastolique*
+            <info-bulle
+              [src]="cheminIcone_info"
+              [title]="'La pression diastolique'"
+              [content]="
+                'Elle correspond à la tension artérielle mesurée lors de la phase de relâchement du cœur.'
+              "
+            ></info-bulle>
           </strong>
         </td>
         <td>
@@ -210,15 +211,15 @@
       <tr>
         <td>
           <strong
-            >Pression artérielle systolique* (<a href="#"
-              ><img
-                width="15"
-                src="{{ cheminIcone_info }}"
-                title="La pression systolique correspond à la contraction du ventricule qui permet l'éjection du sang dans l'aorte puis vers les artères.
-La pression y est maximale."
-                alt="info" /></a
-            >)</strong
-          >
+            >Pression artérielle systolique*
+            <info-bulle
+              [src]="cheminIcone_info"
+              [title]="'La pression systolique'"
+              [content]="
+                'La pression systolique correspond à la contraction du ventricule qui permet l\'éjection du sang dans l\'aorte puis vers les artères.La pression y est maximale.'
+              "
+            ></info-bulle>
+          </strong>
         </td>
         <td>
           <input
@@ -236,14 +237,21 @@ La pression y est maximale."
         <td>
           <div>
             <strong
-              >Pression artérielle moyenne (<a href="#"
-                ><img
-                  width="15"
-                  src="{{ cheminIcone_info }}"
-                  title="La pression artérielle est mesurée en mm/Hg (millimètres de mercure), une mesure de pression standard."
-                  alt="info" /></a
-              >)</strong
-            >
+              >Pression artérielle moyenne
+              <!-- <img
+                width="15"
+                src="{{ cheminIcone_info }}"
+                title="La pression artérielle est mesurée en mm/Hg (millimètres de mercure), une mesure de pression standard."
+                alt="info"
+            /> -->
+              <info-bulle
+                [src]="cheminIcone_info"
+                [title]="'La pression artérielle moyenne'"
+                [content]="
+                  'La pression artérielle est mesurée en mm/Hg (millimètres de mercure), une mesure de pression standard.'
+                "
+              ></info-bulle>
+            </strong>
           </div>
         </td>
         <td>
