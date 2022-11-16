@@ -1,0 +1,10 @@
+<img
+  class="info-bulle-popover"
+  [src]="src"
+  width="15"
+  [title]="this.sanitizer.bypassSecurityTrustHtml(title)"
+  tabindex="0"
+  data-toggle="popover"
+  [attr.data-content]="this.sanitizer.bypassSecurityTrustHtml(content)"
+  alt="Info"
+/>

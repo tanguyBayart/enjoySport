@@ -5,18 +5,13 @@
     Cette page vous permet de calculer différents indicateurs sur l'état et les
     besoins de votre corps afin d'atteindre vos objectifs.
   </div>
-  <br />
-
-  <div>
-    <app-tips-info [tipsInfos]="tipsInfo"></app-tips-info>
-  </div>
 
   <br />
 
   <form>
-    <table class="blueTable">
+    <table class="blueTable" role="presentation">
       <tr>
-        <td><strong> Sexe*</strong></td>
+        <td><strong> Sexe</strong></td>
         <td>
           <div class="form-check">
             <input
@@ -45,7 +40,7 @@
         </td>
       </tr>
       <tr>
-        <td><strong>Poid* (kg)</strong></td>
+        <td><strong>Poid (kg)</strong></td>
         <td>
           <input
             class="form-control"
@@ -59,7 +54,7 @@
         </td>
       </tr>
       <tr>
-        <td><strong>Taille* (m)</strong></td>
+        <td><strong>Taille (m)</strong></td>
         <td>
           <input
             class="form-control"
@@ -76,7 +71,7 @@
       </tr>
       <tr>
         <td>
-          <strong> Age* </strong>
+          <strong> Age </strong>
         </td>
         <td>
           <input
@@ -92,7 +87,14 @@
       </tr>
       <tr>
         <td>
-          <strong>Niveau d'activité physique*</strong>
+          <strong
+            >Niveau d'activité physique
+            <info-bulle-wp
+              [src]="cheminIcone_info"
+              [title]="data_NAP_title"
+              [content]="data_NAP_content"
+            ></info-bulle-wp
+          ></strong>
         </td>
         <td>
           <input
@@ -132,7 +134,12 @@
       <tr>
         <td>
           <div>
-            <strong>Métabolisme de base</strong>
+            <strong>Métabolisme de base </strong>
+            <info-bulle-wp
+              [src]="cheminIcone_info"
+              [title]="data_MB_title"
+              [content]="data_MB_content"
+            ></info-bulle-wp>
           </div>
         </td>
         <td>{{ mb }}</td>
@@ -141,7 +148,12 @@
       <tr>
         <td>
           <div>
-            <strong>Besoin Énergétique Journalier</strong>
+            <strong>Besoin Énergétique Journalier </strong>
+            <info-bulle-wp
+              [src]="cheminIcone_info"
+              [title]="data_BEJ_title"
+              [content]="data_BEJ_content"
+            ></info-bulle-wp>
           </div>
         </td>
         <td>
@@ -151,7 +163,12 @@
       <tr>
         <td>
           <div>
-            <strong>Indice de Masse corporelle</strong>
+            <strong>Indice de Masse corporelle </strong>
+            <info-bulle-wp
+              [src]="cheminIcone_info"
+              [title]="data_IMC_title"
+              [content]="data_IMC_content"
+            ></info-bulle-wp>
           </div>
         </td>
         <td>
@@ -161,7 +178,12 @@
       <tr>
         <td>
           <div>
-            <strong>Fréquence cardiaque maximale</strong>
+            <strong>Fréquence cardiaque maximale </strong
+            ><info-bulle-wp
+              [src]="cheminIcone_info"
+              [title]="data_IMC_title"
+              [content]="data_IMC_content"
+            ></info-bulle-wp>
           </div>
         </td>
         <td>
@@ -171,7 +193,12 @@
       <tr>
         <td>
           <div>
-            <strong>Fréquence cardiaque idéale</strong>
+            <strong>Fréquence cardiaque idéale </strong
+            ><info-bulle-wp
+              [src]="cheminIcone_info"
+              [title]="data_IMC_title"
+              [content]="data_IMC_content"
+            ></info-bulle-wp>
           </div>
         </td>
         <td>
@@ -182,16 +209,16 @@
     <br />
 
     <!-- Pression artérielle -->
-    <table class="blueTable">
+    <table class="blueTable" role="presentation">
       <tr>
         <td>
           <strong
-            >Pression diastolique*
+            >Pression diastolique
             <info-bulle
               [src]="cheminIcone_info"
               [title]="'La pression diastolique'"
               [content]="
-                'Elle correspond à la tension artérielle mesurée lors de la phase de relâchement du cœur.'
+                'La pression diastolique correspond à la tension artérielle mesurée lors de la phase de relâchement du cœur.'
               "
             ></info-bulle>
           </strong>
@@ -211,7 +238,7 @@
       <tr>
         <td>
           <strong
-            >Pression artérielle systolique*
+            >Pression artérielle systolique
             <info-bulle
               [src]="cheminIcone_info"
               [title]="'La pression systolique'"
@@ -238,12 +265,6 @@
           <div>
             <strong
               >Pression artérielle moyenne
-              <!-- <img
-                width="15"
-                src="{{ cheminIcone_info }}"
-                title="La pression artérielle est mesurée en mm/Hg (millimètres de mercure), une mesure de pression standard."
-                alt="info"
-            /> -->
               <info-bulle
                 [src]="cheminIcone_info"
                 [title]="'La pression artérielle moyenne'"

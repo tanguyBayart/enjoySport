@@ -4,6 +4,8 @@ import { TipsInfoComponent } from '../tipsInfo/tipsInfo.component';
 import tips from 'src/assets/data/tips.json';
 import tipsT from 'src/assets/data/tips_test.json';
 import bootstrap from 'bootstrap';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-tips-view',
   templateUrl: './tips-view.component.html',
@@ -32,10 +34,56 @@ export class TipsComponent implements OnInit, AfterViewInit {
   public taille: number = 0;
   public age: number = 0;
   public NAct: number = 1.39;
+  public data: any;
+  public html: string;
+  // public datas: any;
 
-  constructor(private fb: FormBuilder) {}
+  public data_NAP_title: any;
+  public data_NAP_content: any;
+  public data_MB_title: any;
+  public data_MB_content: any;
+  public data_BEJ_title: any;
+  public data_BEJ_content: any;
+  public data_IMC_title: any;
+  public data_IMC_content: any;
+  public data_FC_title: any;
+  public data_FC_content: any;
 
-  ngOnInit(): void {}
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    public sanitizer: DomSanitizer
+  ) {}
+
+  ngOnInit(): void {
+    const url = 'http://enjoysportback.enjoysport.org/wp-json/';
+
+    this.http.get(url + 'wp/v2/posts/59').subscribe((data: any) => {
+      this.data_NAP_title = data.title.rendered;
+      this.data_NAP_content = data.content.rendered;
+    });
+
+    this.http.get(url + 'wp/v2/posts/61').subscribe((data: any) => {
+      this.data_MB_title = data.title.rendered;
+      this.data_MB_content = data.content.rendered;
+    });
+
+    this.http.get(url + 'wp/v2/posts/64').subscribe((data: any) => {
+      this.data_BEJ_title = data.title.rendered;
+      this.data_BEJ_content = data.content.rendered;
+    });
+
+    this.http.get(url + 'wp/v2/posts/66').subscribe((data: any) => {
+      this.data_IMC_title = data.title.rendered;
+      this.data_IMC_content = data.content.rendered;
+    });
+
+    this.http.get(url + 'wp/v2/posts/68').subscribe((data: any) => {
+      this.data_FC_title = data.title.rendered;
+      this.data_FC_content = data.content.rendered;
+    });
+  }
+
   ngAfterViewInit(): void {}
 
   public calculateMB(): void {
@@ -55,7 +103,8 @@ export class TipsComponent implements OnInit, AfterViewInit {
   }
 
   public calculateImc() {
-    this.imc = this.poids / (this.taille * this.taille);
+    if (this.taille != 0) this.imc = this.poids / (this.taille * this.taille);
+    else this.imc = 0;
   }
 
   public calculateFc() {

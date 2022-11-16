@@ -59,25 +59,22 @@ export class WelcomeViewComponent implements OnInit {
   ngOnInit(): void {
     const url = 'http://enjoysportback.enjoysport.org/wp-json/';
     this.http.get(url).subscribe((data) => {
-      // console.log(data);
+      console.log(data);
     });
     this.http.get(url + 'wp/v2/pages?slug=sample-page').subscribe((data) => {
-      // console.log(data);
       this.html = data[0].content.rendered;
-      // console.log(this.html);
     });
     this.http.get(url + 'wp/v2/link-footer').subscribe((data) => {
       // console.log(data);
       this.datas = data;
-      // console.log(this.datas);
     });
 
     this.http.get(url + 'wp/v2/pages?slug=vive-le-sport').subscribe((data) => {
       this.data_presentation = data[0].content.rendered;
-      // console.log(this.datas);
     });
   }
 
+  //varialbles
   title = 'Enjoy Sport !';
   cheminImageAppli = '../assets/images/logo.png';
 

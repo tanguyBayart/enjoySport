@@ -53,6 +53,7 @@ import { VideosComponent } from './components/videos/videos.component';
 import { InscriptionComponent } from './session/inscription/inscription.component';
 import { VideoYtComponent } from './components/video-yt/video-yt.component';
 import { InfoBulleComponent } from './components/info-bulle/info-bulle.component';
+import { InfoBulleWpComponent } from './components/info-bulle-wp/info-bulle-wp.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { InfoBulleComponent } from './components/info-bulle/info-bulle.component
     InscriptionComponent,
     VideoYtComponent,
     InfoBulleComponent,
+    InfoBulleWpComponent,
   ],
   imports: [
     BrowserModule,
