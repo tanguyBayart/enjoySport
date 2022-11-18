@@ -8,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class InfoBulleWpComponent implements OnInit, AfterViewInit {
   @Input() src = '';
-  @Input() title = '';
+  @Input() title_popover = '';
   @Input() content = '';
 
   constructor(public sanitizer: DomSanitizer) {}
@@ -18,6 +18,7 @@ export class InfoBulleWpComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     $('.info-bulle-wp-popover').popover({
       trigger: 'focus',
+      html: true,
     });
   }
 }

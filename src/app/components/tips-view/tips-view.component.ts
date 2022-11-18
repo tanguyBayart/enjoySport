@@ -1,4 +1,9 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TipsInfoComponent } from '../tipsInfo/tipsInfo.component';
 import tips from 'src/assets/data/tips.json';
@@ -40,6 +45,9 @@ export class TipsComponent implements OnInit, AfterViewInit {
 
   public data_NAP_title: any;
   public data_NAP_content: any;
+  public sdata_NAP_title: any;
+  public sdata_NAP_content: any;
+
   public data_MB_title: any;
   public data_MB_content: any;
   public data_BEJ_title: any;
@@ -52,7 +60,8 @@ export class TipsComponent implements OnInit, AfterViewInit {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    private ref: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -61,16 +70,25 @@ export class TipsComponent implements OnInit, AfterViewInit {
     this.http.get(url + 'wp/v2/posts/59').subscribe((data: any) => {
       this.data_NAP_title = data.title.rendered;
       this.data_NAP_content = data.content.rendered;
+      this.ref.detectChanges();
     });
 
     this.http.get(url + 'wp/v2/posts/61').subscribe((data: any) => {
       this.data_MB_title = data.title.rendered;
       this.data_MB_content = data.content.rendered;
+      console.log(this.data_MB_title);
+      console.log(this.data_MB_content);
+
+      this.ref.detectChanges();
     });
 
     this.http.get(url + 'wp/v2/posts/64').subscribe((data: any) => {
       this.data_BEJ_title = data.title.rendered;
       this.data_BEJ_content = data.content.rendered;
+      console.log(this.data_BEJ_title);
+      console.log(this.data_BEJ_content);
+
+      this.ref.detectChanges();
     });
 
     this.http.get(url + 'wp/v2/posts/66').subscribe((data: any) => {

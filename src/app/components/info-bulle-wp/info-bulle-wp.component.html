@@ -1,10 +1,10 @@
 <img
-  class="info-bulle-popover"
+  class="info-bulle-wp-popover"
   [src]="src"
   width="15"
-  [title]="this.sanitizer.bypassSecurityTrustHtml(title)"
+  [title]="title_popover"
   tabindex="0"
   data-toggle="popover"
-  [attr.data-content]="this.sanitizer.bypassSecurityTrustHtml(content)"
+  [attr.data-content]="content"
   alt="Info"
 />
