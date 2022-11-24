@@ -41,13 +41,11 @@ export class TipsComponent implements OnInit, AfterViewInit {
   public NAct: number = 1.39;
   public data: any;
   public html: string;
-  // public datas: any;
 
   public data_NAP_title: any;
   public data_NAP_content: any;
   public sdata_NAP_title: any;
   public sdata_NAP_content: any;
-
   public data_MB_title: any;
   public data_MB_content: any;
   public data_BEJ_title: any;

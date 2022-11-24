@@ -8,9 +8,11 @@ import { Trainings } from '../interfaces/trainings.interface';
 @Injectable({ providedIn: 'root' })
 export class TrainingService {
   private _training$: BehaviorSubject<Training[]> = new BehaviorSubject(null);
+
   public get training$(): BehaviorSubject<Training[]> {
     return this._training$;
   }
+
   public set training$(value: BehaviorSubject<Training[]>) {
     this._training$ = value;
   }
