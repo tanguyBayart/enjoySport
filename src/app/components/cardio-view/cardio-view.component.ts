@@ -155,7 +155,9 @@ export class CardioViewComponent implements OnInit, AfterViewInit {
 
         this.barChartData[0].data.push(datas[i].cardio_temps);
         this.barChartData[1].data.push(datas[i].cardio_kcal);
-        this.barChartLabels.push(datas[i].cardio_date);
+        this.barChartLabels.push(
+          new Date(datas[i].cardio_date).toLocaleDateString()
+        );
         //        this.barChartLabels.push(datas[i].cardio_date);
       }
     }
