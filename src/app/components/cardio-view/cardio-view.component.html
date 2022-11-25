@@ -1,8 +1,13 @@
 <div class="content" role="main">
   <div id="bigtitle">Cardio</div>
-
+  <br />
   <div id="mediumtitle">Suivi</div>
-  <div>
+
+  <mat-slide-toggle color="primary" (click)="switchMode()"
+    >mode switch</mat-slide-toggle
+  >
+  <hr style="width: 75%" />
+  <div [hidden]="isArraymode">
     <canvas
       baseChart
       [datasets]="barChartData"
@@ -15,7 +20,7 @@
   </div>
   <br />
 
-  <table class="blueTable2" role="presentation">
+  <table class="blueTable2" role="presentation" [hidden]="!isArraymode">
     <tr>
       <td><strong> Date</strong></td>
       <td><strong>Exercice</strong></td>
@@ -29,9 +34,8 @@
       <td>{{ data.cardio_kcal }}</td>
     </tr>
   </table>
-  <hr />
-  <br />
 
+  <hr style="width: 75%" />
   <mat-card class="card">
     <mat-card-title id="mediumtitle"> Ajouter un entrainement </mat-card-title>
     <mat-card-content>
@@ -40,13 +44,13 @@
         <!-- Date -->
         <mat-form-field appearance="fill">
           <mat-label>Date</mat-label>
-          <input matInput required type="date" />
+          <input matInput required matInput type="date" />
         </mat-form-field>
         <br />
         <!-- Sport -->
         <mat-form-field appearance="fill">
           <mat-label>Discipline</mat-label>
-          <select matNativeControl required name="type">
+          <select matNativeControl required matInput name="type">
             <option value="marche">Marche</option>
             <option value="velo">Vélo</option>
           </select> </mat-form-field
@@ -54,14 +58,7 @@
         <!-- temps entrainement -->
         <mat-form-field appearance="fill">
           <mat-label>Temps écoulé (mn)</mat-label>
-          <input
-            name="time"
-            matNativeControl
-            required
-            matInput
-            type="number"
-            name="time"
-          />
+          <input name="time" matNativeControl required matInput type="number" />
         </mat-form-field>
 
         <br />

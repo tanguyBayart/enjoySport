@@ -37,15 +37,14 @@ import { CardioViewComponent } from './components/cardio-view/cardio-view.compon
 import { MuscuViewComponent } from './components/muscu-view/muscu-view.component';
 import { TipsComponent } from './components/tips-view/tips-view.component';
 
+// MATERIALS
 import { MatDialogModule } from '@angular/material/dialog';
-//AUTH!!! BEGIN
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-// import { InscriptionComponent } from './session/inscription/inscription.component';
-
-//AUTH!!! END
+// import {} from '../material.module';
 
 import { EvolutionsComponent } from './components/evolutions/evolutions.component';
 import { TipsInfoComponent } from './components/tipsInfo/tipsInfo.component';
@@ -84,6 +83,7 @@ import { InfoBulleWpComponent } from './components/info-bulle-wp/info-bulle-wp.c
     AngularFireModule.initializeApp(environment.firebaseConfig),
     // MatToolbarModule,
     MatIconModule,
+    MatSlideToggleModule,
     BrowserAnimationsModule,
     MatDialogModule,
     MatInputModule,

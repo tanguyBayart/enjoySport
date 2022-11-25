@@ -1,3 +1,5 @@
+import { DatePipe } from '@angular/common';
+
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -5,6 +7,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+
 import {
   FormBuilder,
   FormControl,
@@ -31,40 +34,29 @@ export class CardioViewComponent implements OnInit, AfterViewInit {
   public cardioTraining: Cardio;
   public data_express: string;
   public cardio_datas_tab: any[][];
-  cardio_datas: Object;
+  public cardio_datas: Object;
+
+  public isArraymode: boolean;
 
   constructor(
     private fb: FormBuilder,
     private cardioService: CardioService,
     private http: HttpClient,
     public sanitizer: DomSanitizer,
-    private ref: ChangeDetectorRef
+    private ref: ChangeDetectorRef // private datePipe: DatePipe
   ) {}
 
   ngOnInit(): void {
     console.log('### CardioViewComponent : ngOnInit() start');
     const url = 'http://localhost:3000/cardio';
+    this.isArraymode = false;
     this.initForm(this.cardioTraining);
 
     //Appel backend
     this.http.get(url).subscribe((cardio_datas) => {
-      // console.log('################################ cardio_datas');
       this.cardio_datas = cardio_datas;
-      // console.log(cardio_datas);
-
-      // console.log('################################');
-      // this.data_express = cardio_datas[0];
-      // console.log('## ' + this.data_express['cardio_date']);
-      // console.log('## ' + this.data_express['cardio_exercice']);
-      // console.log('## ' + this.data_express['cardio_temps']);
-      // console.log('## ' + this.data_express['cardio_kcal']);
-
-      // this.cardio_datas_tab = Object.keys(cardio_datas).map(function (cle) {
-      //   return [cardio_datas[cle]];
-      // });
-      // console.log('################################ cardio_datas_tab');
-      // console.log(this.cardio_datas_tab);
-      // console.log('################################');
+      this.updateChart(cardio_datas);
+      // console.log(console.log(this.cardio_datas));
     });
     this.ref.detectChanges();
   }
@@ -85,32 +77,49 @@ export class CardioViewComponent implements OnInit, AfterViewInit {
     });
   }
 
+  public switchMode(): void {
+    console.log('## switchMode : isArraymode = ' + this.isArraymode);
+    this.isArraymode = !this.isArraymode;
+    this.ref.detectChanges();
+    console.log('## switchMode : isArraymode = ' + this.isArraymode);
+  }
+
   public submit(): void {
     console.log('### CardioViewComponent : submit() start (TODO)');
 
     if (this.cardioTraining) {
+      console.log(
+        '### CardioViewComponent : this.cardioService.editTraining() (TODO)'
+      );
       this.cardioService.editTraining();
-      // .editTraining(this.cardioTraining._id!, this.cocktailForm.value)
+      // this.cardioService.editTraining(this.cardioTraining._id!, this.cocktailForm.value)
       // .subscribe();
     } else {
+      console.log(
+        '### CardioViewComponent : this.cardioService.addTraining() (TODO)'
+      );
       this.cardioService.addTraining();
     }
 
-    console.log('### CardioViewComponent : submit() end');
+    console.log('### CardioViewComponent : submit() end (activate routing)');
     // this.router.navigate(['..'], { relativeTo: this.activatedRoute });
   }
 
   ngAfterViewInit(): void {
-    // console.log('### CardioViewComponent : ngAfterViewInit() start');
-    // console.log('### CardioViewComponent : ngAfterViewInit() any stuff ?');
-    // console.log('### CardioViewComponent : ngAfterViewInit() end');
+    console.log('### CardioViewComponent : ngAfterViewInit() start');
+    console.log('### CardioViewComponent : ngAfterViewInit() any stuff ?');
+    console.log('### CardioViewComponent : ngAfterViewInit() end');
   }
 
   ///////////////// BAR CHART : BEGIN
   public barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true,
+    scaleShowVerticalLines: true,
+    responsive: false,
   };
+
+  public barChartType = 'line';
+  public barChartLegend = true;
+
   public barChartLabels = [
     '2006',
     '2007',
@@ -120,11 +129,40 @@ export class CardioViewComponent implements OnInit, AfterViewInit {
     '2011',
     '2012',
   ];
-  public barChartType = 'bar';
-  public barChartLegend = true;
+
   public barChartData = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
+    { data: [65, 59, 80, 81, 56, 55, 40], label: "Durée d'entrainement" },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Calories éliminées' },
   ];
+
+  public updateChart(datas: any): void {
+    console.log('################# updateChart START');
+    console.log('################# updateChart REINIT DATAS');
+    this.barChartData = [
+      { data: [], label: "Durée d'entrainement (mn)" },
+      { data: [], label: 'Calories éliminées (Kcal)' },
+    ];
+    this.barChartLabels = [];
+
+    console.log('################# updateChart ADD DATAS');
+    for (let i = 0; i < datas.length; i++) {
+      if (datas[i].cardio_kcal) {
+        console.log(datas[i]);
+        console.log(datas[i].cardio_date);
+        console.log(datas[i].cardio_temps);
+        console.log(datas[i].cardio_kcal);
+        console.log(datas[i].cardio_kcal / datas[i].cardio_temps);
+
+        this.barChartData[0].data.push(datas[i].cardio_temps);
+        this.barChartData[1].data.push(datas[i].cardio_kcal);
+        this.barChartLabels.push(datas[i].cardio_date);
+        //        this.barChartLabels.push(datas[i].cardio_date);
+      }
+    }
+    console.log('#################' + this.barChartData);
+
+    console.log('################# updateChart END');
+  }
+
   ///////////////// BAR CHART : END
 }
