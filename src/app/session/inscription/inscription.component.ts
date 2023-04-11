@@ -12,6 +12,7 @@ export class InscriptionComponent implements OnInit {
   auth_todo = 'A implémenter';
 
   public form: FormGroup = this.fb.group({
+    name: ['', [Validators.required]],
     email: ['', [Validators.required]],
     password: ['', Validators.required],
     password2: ['', Validators.required],
@@ -28,11 +29,22 @@ export class InscriptionComponent implements OnInit {
     // console.log(this.form.getRawValue());
     var data = this.form.value;
 
+    console.log('name : ' + data.name);
     console.log('email : ' + data.email);
     console.log('pwd1 : ' + data.password);
     console.log('pwd2 : ' + data.password2);
-    console.log('TODO : Control forms fields');
-    console.log('TODO : Create user and session');
+
+    console.log('WORKING : Control forms fields');
+    if (data.password.length < 6) {
+      console.log('!!! password too short !!!');
+    }
+
+    if (data.password != data.password2) {
+      console.log('!!! data.password != data.password2 !!!');
+    }
+
+    console.log('TODO : Create user');
+    console.log('TODO : Create session');
     console.log('TOCTIVATE : Redirect to home page');
 
     // this.router.navigate(['/', 'home']);

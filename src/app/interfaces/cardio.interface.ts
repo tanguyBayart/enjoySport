@@ -1,6 +1,6 @@
 export interface Cardio {
   _id?: string;
-  date?: number;
+  date?: string;
   discipline: string;
   temps: number;
   kcal?: number;

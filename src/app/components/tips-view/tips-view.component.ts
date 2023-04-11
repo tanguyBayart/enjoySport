@@ -5,10 +5,9 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { TipsInfoComponent } from '../tipsInfo/tipsInfo.component';
+// import { TipsInfoComponent } from '../tipsInfo/tipsInfo.component';
 import tips from 'src/assets/data/tips.json';
 import tipsT from 'src/assets/data/tips_test.json';
-import bootstrap from 'bootstrap';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
@@ -74,8 +73,6 @@ export class TipsComponent implements OnInit, AfterViewInit {
     this.http.get(url + 'wp/v2/posts/61').subscribe((data: any) => {
       this.data_MB_title = data.title.rendered;
       this.data_MB_content = data.content.rendered;
-      console.log(this.data_MB_title);
-      console.log(this.data_MB_content);
 
       this.ref.detectChanges();
     });
@@ -83,9 +80,6 @@ export class TipsComponent implements OnInit, AfterViewInit {
     this.http.get(url + 'wp/v2/posts/64').subscribe((data: any) => {
       this.data_BEJ_title = data.title.rendered;
       this.data_BEJ_content = data.content.rendered;
-      console.log(this.data_BEJ_title);
-      console.log(this.data_BEJ_content);
-
       this.ref.detectChanges();
     });
 
@@ -129,11 +123,6 @@ export class TipsComponent implements OnInit, AfterViewInit {
   }
 
   public calculatePA(): void {
-    console.log('################### calculatePA called######################');
-    console.log('PAD = ' + this.pad);
-    console.log('PAS = ' + this.pas);
-
     this.pa = (2 * this.pad + this.pas) / 3;
-    console.log('PA = ' + this.pa);
   }
 }

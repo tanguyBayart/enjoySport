@@ -48,3 +48,8 @@ input {
 .mat-input-element {
   border: 0 !important;
 }
+
+mat-row > *,
+mat-header-row > * {
+  flex: 1;
+}

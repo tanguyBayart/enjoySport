@@ -1,0 +1,55 @@
+@import "../../styles.css";
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content mat-card {
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.card {
+  width: fit-content;
+}
+
+/* .mat-card-title {
+  width: 250px;
+} */
+
+mat-label {
+  margin-top: 15px;
+}
+mat-form-field {
+  margin-bottom: 10px;
+}
+
+.mat-card-content {
+  width: 180px;
+}
+
+button {
+  /* width: 100%; */
+  width: 200px;
+  margin-top: 15px;
+  /* background: red; */
+}
+
+input {
+  width: 200px;
+}
+.mat-form-field-infix,
+.mat-input-element {
+  border: 0 !important;
+}
+
+mat-row > *,
+mat-header-row > * {
+  flex: 1;
+}

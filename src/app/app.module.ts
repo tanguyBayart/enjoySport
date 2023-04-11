@@ -28,6 +28,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 // import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 // Charts
 import { ChartsModule } from 'ng2-charts';
@@ -44,6 +45,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTable } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+
 // import {} from '../material.module';
 
 import { EvolutionsComponent } from './components/evolutions/evolutions.component';
@@ -53,6 +58,8 @@ import { InscriptionComponent } from './session/inscription/inscription.componen
 import { VideoYtComponent } from './components/video-yt/video-yt.component';
 import { InfoBulleComponent } from './components/info-bulle/info-bulle.component';
 import { InfoBulleWpComponent } from './components/info-bulle-wp/info-bulle-wp.component';
+import { ProfilComponent } from './components/profil/profil.component';
+// import { I18nModule } from 'i18n';
 
 @NgModule({
   declarations: [
@@ -71,6 +78,7 @@ import { InfoBulleWpComponent } from './components/info-bulle-wp/info-bulle-wp.c
     VideoYtComponent,
     InfoBulleComponent,
     InfoBulleWpComponent,
+    ProfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +98,10 @@ import { InfoBulleWpComponent } from './components/info-bulle-wp/info-bulle-wp.c
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    // I18nModule,
   ],
   providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent],

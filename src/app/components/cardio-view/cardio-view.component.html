@@ -1,12 +1,13 @@
 <div class="content" role="main">
   <div id="bigtitle">Cardio</div>
   <br />
-  <div id="mediumtitle">Suivi</div>
+  <div id="mediumtitle">
+    Suivi
+    <mat-slide-toggle color="primary" (click)="switchMode()"></mat-slide-toggle>
+  </div>
 
-  <mat-slide-toggle color="primary" (click)="switchMode()"
-    >mode switch</mat-slide-toggle
-  >
   <hr style="width: 75%" />
+
   <div [hidden]="isArraymode">
     <canvas
       width="600"
@@ -20,24 +21,123 @@
     >
     </canvas>
   </div>
-  <br />
 
-  <table class="blueTable2" role="presentation" [hidden]="!isArraymode">
-    <tr>
-      <td><strong> Date</strong></td>
-      <td><strong>Exercice</strong></td>
-      <td><strong>Temp (mn)</strong></td>
-      <td><strong>Kcal dépensées</strong></td>
-    </tr>
-    <tr *ngFor="let data of this.cardio_datas; let idx = index">
-      <td>{{ data.cardio_date | date: "dd/MM/yyyy" }}</td>
-      <td>{{ data.cardio_exercice }}</td>
-      <td>{{ data.cardio_temps }}</td>
-      <td>{{ data.cardio_kcal }}</td>
+  <hr style="width: 75%" [hidden]="isArraymode" />
+  <div [hidden]="isArraymode">
+    <canvas
+      width="600"
+      height="200"
+      baseChart
+      [datasets]="barChartDataAvg"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [chartType]="barChartType"
+    >
+    </canvas>
+  </div>
+
+  <!-- ### filter de ouf!! BEGIN -->
+  <mat-form-field [hidden]="!isArraymode">
+    <mat-label>Filtre</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Rechercher ... "
+      #input
+    />
+  </mat-form-field>
+
+  <!-- table definition -->
+  <table
+    mat-table
+    [dataSource]="this?.tableDataSource"
+    role="presentation"
+    [hidden]="!isArraymode"
+    matSort
+    (matSortChange)="announceSortChange($event)"
+  >
+    <!-- cells definition -->
+
+    <!-- date -->
+    <ng-container matColumnDef="Date">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Trier par date"
+      >
+        Date
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.Date | date : "dd/MM/yyyy" }}
+      </td>
+    </ng-container>
+
+    <!-- exercice -->
+    <ng-container matColumnDef="Exercice">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Trier par exercice"
+      >
+        Exercice
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.Exercice }}</td>
+    </ng-container>
+
+    <!-- Kcal dépensées -->
+    <ng-container matColumnDef="Kcal">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Trier par Quantité d'énergie dépensée"
+      >
+        Energie dépensée (Kcal)
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.Kcal }}</td>
+    </ng-container>
+
+    <!-- temps -->
+    <ng-container matColumnDef="Temps">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Trier par temps écoulé"
+      >
+        Temps écoulé
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.Temps }}</td>
+    </ng-container>
+
+    <!-- header definition -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <!-- rows render -->
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        Aucun résultat ne correspond aux termes de recherche spécifiés (<strong
+          >"{{ input.value }}"</strong
+        >)
+      </td>
     </tr>
   </table>
 
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page of users"
+    [hidden]="!isArraymode"
+  ></mat-paginator>
+
   <hr style="width: 75%" />
+
+  <!-- Formulaire de saisie -->
   <mat-card class="card">
     <mat-card-title id="mediumtitle"> Ajouter un entrainement </mat-card-title>
     <mat-card-content>
@@ -46,13 +146,19 @@
         <!-- Date -->
         <mat-form-field appearance="fill">
           <mat-label>Date</mat-label>
-          <input matInput required matInput type="date" />
+          <input required matInput type="date" formControlName="date" />
         </mat-form-field>
         <br />
         <!-- Sport -->
         <mat-form-field appearance="fill">
           <mat-label>Discipline</mat-label>
-          <select matNativeControl required matInput name="type">
+          <select
+            matNativeControl
+            required
+            matInput
+            name="type"
+            formControlName="discipline"
+          >
             <option value="marche">Marche</option>
             <option value="velo">Vélo</option>
           </select> </mat-form-field
@@ -60,14 +166,28 @@
         <!-- temps entrainement -->
         <mat-form-field appearance="fill">
           <mat-label>Temps écoulé (mn)</mat-label>
-          <input name="time" matNativeControl required matInput type="number" />
+          <input
+            name="temps"
+            matNativeControl
+            required
+            matInput
+            type="number"
+            formControlName="temps"
+          />
         </mat-form-field>
 
         <br />
         <!-- Energie depensée -->
         <mat-form-field appearance="fill" name="kcal">
           <mat-label>Energie dépensée (Kcal)</mat-label>
-          <input matNativeControl required matInput type="number" name="kcal" />
+          <input
+            matNativeControl
+            required
+            matInput
+            type="number"
+            name="kcal"
+            formControlName="kcal"
+          />
         </mat-form-field>
         <br />
         <button

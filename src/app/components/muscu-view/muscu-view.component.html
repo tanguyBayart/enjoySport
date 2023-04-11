@@ -1,16 +1,17 @@
 <div class="content" role="main">
   <div id="bigtitle">Musculation</div>
-
-  <br /><br />
-  <div width="100%">
-    <img width="25" src="{{ cheminIcone_build }}" alt="En construction" />
-    Cette Rubrique est en construction...
-    <img width="25" src="{{ cheminIcone_build }}" alt="En construction" />
+  <div id="mediumtitle">
+    Suivi
+    <mat-slide-toggle color="primary" (click)="switchMode()"></mat-slide-toggle>
   </div>
   <br /><br />
 
-  <div>
+  <hr style="width: 75%" />
+
+  <div [hidden]="isArraymode">
     <canvas
+      width="600"
+      height="400"
       baseChart
       [datasets]="barChartData"
       [labels]="barChartLabels"
@@ -21,38 +22,125 @@
     </canvas>
   </div>
 
-  <!-- form : begin -->
-  <div>
-    <form [formGroup]="trainingForm" (ngSubmit)="submit()">
-      <div class="form-group d-flex flex-column">
-        <label>Date</label>
-        <input formControlName="date" type="date" />
-      </div>
-      <hr />
-      <button (click)="addTraining()" class="btn btn-primary" type="button">
-        Ajouter un exercice
-      </button>
-      <hr />
-      <div formArrayName="trainings">
-        <div
-          [formGroupName]="index"
-          *ngFor="let training of trainings; let index = index"
-        >
-          <div class="form-group d-flex flex-column">
-            <label>Nom</label>
-            <input formControlName="name" type="text" />
-          </div>
-        </div>
-      </div>
-      <div class="actions">
-        <button [disabled]="trainingForm.invalid" class="btn btn-primary">
-          Valider
-        </button>
-        <button type="button" routerLink="../" class="btn btn-secondary">
-          Annuler
-        </button>
-      </div>
-    </form>
-  </div>
-  <!-- form : end -->
+  <mat-form-field [hidden]="!isArraymode">
+    <mat-label>Filtre</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Rechercher ... "
+      #input
+    />
+  </mat-form-field>
+
+  <!-- table definition -->
+  <table
+    mat-table
+    [dataSource]="this?.tableDataSource"
+    role="presentation"
+    [hidden]="!isArraymode"
+    matSort
+    (matSortChange)="announceSortChange($event)"
+  >
+    <!-- cells definition -->
+    <!-- date -->
+    <ng-container matColumnDef="Date">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Trier par date"
+      >
+        Date
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <!-- {{ element.muscu_session_date | date : "dd/MM/yyyy" }} -->
+        {{ element.muscu_session_date }}
+      </td>
+    </ng-container>
+
+    <!-- exercice -->
+    <ng-container matColumnDef="Exercice">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Trier par exercice"
+      >
+        Exercice
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.training_muscu_exercise_name }}
+      </td>
+    </ng-container>
+
+    <!-- Poids -->
+    <ng-container matColumnDef="Poids">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Trier par Poids"
+      >
+        Poids
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.training_muscu_exercise_nb_poid }}
+      </td>
+    </ng-container>
+
+    <!-- Repetitions -->
+    <ng-container matColumnDef="Répétitions">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Trier par Répétitions"
+      >
+        Répétitions
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.training_muscu_exercise_nb_repetition }}
+      </td>
+    </ng-container>
+
+    <!-- Séries  -->
+    <ng-container matColumnDef="Séries">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Trier par Séries"
+      >
+        Séries
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.training_muscu_exercise_nb_serie }}
+      </td>
+    </ng-container>
+
+    <!-- header definition -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <!-- rows render -->
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        Aucun résultat ne correspond aux termes de recherche spécifiés (<strong
+          >"{{ input.value }}"</strong
+        >)
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[10, 25, 100]"
+    aria-label="Select page of users"
+    [hidden]="!isArraymode"
+  ></mat-paginator>
+
+  <hr style="width: 75%" />
+
+  <!--TODO : Form definition -->
 </div>

@@ -6,6 +6,7 @@ import {
   Component,
   Input,
   OnInit,
+  ViewChild,
 } from '@angular/core';
 
 import {
@@ -15,106 +16,138 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort, Sort } from '@angular/material/sort';
 
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { Cardio } from 'src/app/interfaces/cardio.interface';
 import { CardioService } from 'src/app/services/cardio.service';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-cardio-view',
   templateUrl: './cardio-view.component.html',
-  styleUrls: ['./cardio-view.component.css'],
+  styleUrls: ['./cardio-view.component.css', '../../../blueTable2.css'],
 })
 export class CardioViewComponent implements OnInit, AfterViewInit {
+  public get fb(): FormBuilder {
+    return this._fb;
+  }
+  public set fb(value: FormBuilder) {
+    this._fb = value;
+  }
   invalid = true; //TO SUPPRESS?
   public cardioForm: FormGroup;
   public cardioTraining: Cardio;
   public data_express: string;
-  public cardio_datas_tab: any[][];
+  public cardio_datas_tab: any[];
   public cardio_datas: Object;
 
+  public displayedColumns: string[] = ['Date', 'Exercice', 'Temps', 'Kcal'];
+  public tableDataSource: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) matSort: MatSort;
+
   public isArraymode: boolean;
+  // barChartDataAvg: { data: any[]; label: string }[];
 
   constructor(
-    private fb: FormBuilder,
+    private _fb: FormBuilder,
     private cardioService: CardioService,
     private http: HttpClient,
     public sanitizer: DomSanitizer,
-    private ref: ChangeDetectorRef // private datePipe: DatePipe
+    private ref: ChangeDetectorRef,
+    private _liveAnnouncer: LiveAnnouncer
   ) {}
 
   ngOnInit(): void {
-    console.log('### CardioViewComponent : ngOnInit() start');
-    const url = 'http://localhost:3000/cardio';
     this.isArraymode = false;
-    this.initForm(this.cardioTraining);
 
-    //Appel backend
-    this.http.get(url).subscribe((cardio_datas) => {
-      this.cardio_datas = cardio_datas;
-      this.updateChart(cardio_datas);
-      // console.log(console.log(this.cardio_datas));
-    });
-    this.ref.detectChanges();
-  }
-
-  private initForm(
-    cardioTraining: Cardio = {
-      date: 20221120,
-      discipline: '',
+    //initialisation du formulaire
+    this.cardioTraining = {
+      date: new Date().toLocaleDateString(),
+      discipline: 'Marche',
       temps: 0,
       kcal: 0,
-    }
-  ): void {
-    this.cardioForm = this.fb.group({
-      date: [cardioTraining.date, Validators.required],
-      discipline: [cardioTraining.discipline, Validators.required],
-      temps: [cardioTraining.temps, Validators.required],
-      kcal: [cardioTraining.kcal, Validators.required],
+    };
+    this.initForm();
+
+    //Appel backend
+    console.log('### CardioViewComponent : ngOnInit() request backend');
+    const url = 'http://localhost:3000/cardio';
+    this.http.get(url).subscribe((cardio_datas) => {
+      this.updateTable(cardio_datas);
+      this.updateChart(cardio_datas);
+      this.tableDataSource.paginator = this.paginator;
+      this.tableDataSource.sort = this.matSort;
     });
+
+    this.ref.detectChanges();
   }
 
+  private initForm(): void {
+    console.log('############## initForm start ############');
+
+    this.cardioForm = this.fb.group({
+      date: [this.cardioTraining.date, Validators.required],
+      discipline: [this.cardioTraining.discipline, Validators.required],
+      temps: [this.cardioTraining.temps, Validators.required],
+      kcal: [this.cardioTraining.kcal, Validators.required],
+    });
+
+    console.log(this.cardioForm);
+
+    console.log('############## initForm end ############');
+  }
+
+  ngAfterViewInit(): void {}
+
   public switchMode(): void {
-    console.log('## switchMode : isArraymode = ' + this.isArraymode);
     this.isArraymode = !this.isArraymode;
     this.ref.detectChanges();
-    console.log('## switchMode : isArraymode = ' + this.isArraymode);
   }
 
   public submit(): void {
     console.log('### CardioViewComponent : submit() start (TODO)');
 
-    if (this.cardioTraining) {
-      console.log(
-        '### CardioViewComponent : this.cardioService.editTraining() (TODO)'
-      );
-      this.cardioService.editTraining();
-      // this.cardioService.editTraining(this.cardioTraining._id!, this.cocktailForm.value)
-      // .subscribe();
-    } else {
-      console.log(
-        '### CardioViewComponent : this.cardioService.addTraining() (TODO)'
-      );
-      this.cardioService.addTraining();
-    }
+    console.log(
+      '### CardioViewComponent : CARDIOFORM START MOTHERF*****S !!!!!'
+    );
 
-    console.log('### CardioViewComponent : submit() end (activate routing)');
-    // this.router.navigate(['..'], { relativeTo: this.activatedRoute });
+    Object.keys(this.cardioForm.controls).forEach((key) => {
+      console.log(
+        '### CardioViewComponent : ' + this.cardioForm.get(key).value
+      );
+    });
+    // console.log(this.cardioForm);
+
+    console.log('### CardioViewComponent : Check values and record !!!!');
+
+    console.log('### CardioViewComponent : CARDIOFORM END MOTHERF*****S !!!!!');
+    console.log('### CardioViewComponent : submit() end');
   }
 
-  ngAfterViewInit(): void {
-    console.log('### CardioViewComponent : ngAfterViewInit() start');
-    console.log('### CardioViewComponent : ngAfterViewInit() any stuff ?');
-    console.log('### CardioViewComponent : ngAfterViewInit() end');
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.tableDataSource.filter = filterValue.trim().toLowerCase();
+    if (this.tableDataSource.paginator) {
+      this.tableDataSource.paginator.firstPage();
+    }
   }
 
   ///////////////// BAR CHART : BEGIN
   public barChartOptions = {
     scaleShowVerticalLines: true,
     responsive: false,
+    scales: {
+      x: {
+        type: 'timeseries',
+      },
+    },
   };
 
   public barChartType = 'line';
@@ -135,36 +168,51 @@ export class CardioViewComponent implements OnInit, AfterViewInit {
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Calories éliminées' },
   ];
 
+  public barChartDataAvg = [
+    { data: [65, 59, 80, 81, 56, 55, 40], label: "Durée d'entrainement" },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Calories éliminées' },
+  ];
+
+  public updateTable(datas: any): void {
+    this.cardio_datas_tab = [...datas];
+    console.log(this.cardio_datas_tab);
+
+    this.tableDataSource = new MatTableDataSource(this.cardio_datas_tab);
+    this.ref.detectChanges();
+  }
+
   public updateChart(datas: any): void {
-    console.log('################# updateChart START');
-    console.log('################# updateChart REINIT DATAS');
     this.barChartData = [
       { data: [], label: "Durée d'entrainement (mn)" },
       { data: [], label: 'Calories éliminées (Kcal)' },
     ];
+
+    // AVG
+    this.barChartDataAvg = [
+      { data: [], label: 'Dépense énergétique moyenne (Kcal/min)' },
+    ];
+
     this.barChartLabels = [];
 
-    console.log('################# updateChart ADD DATAS');
     for (let i = 0; i < datas.length; i++) {
-      if (datas[i].cardio_kcal) {
-        console.log(datas[i]);
-        console.log(datas[i].cardio_date);
-        console.log(datas[i].cardio_temps);
-        console.log(datas[i].cardio_kcal);
-        console.log(datas[i].cardio_kcal / datas[i].cardio_temps);
+      // console.log(datas[i]);
 
-        this.barChartData[0].data.push(datas[i].cardio_temps);
-        this.barChartData[1].data.push(datas[i].cardio_kcal);
-        this.barChartLabels.push(
-          new Date(datas[i].cardio_date).toLocaleDateString()
-        );
-        //        this.barChartLabels.push(datas[i].cardio_date);
-      }
+      this.barChartData[0].data.push(datas[i].Temps);
+      this.barChartData[1].data.push(datas[i].Kcal);
+      this.barChartLabels.push(new Date(datas[i].Date).toLocaleDateString());
+
+      //AVG
+      //Vélo uniquement
+      //if (datas[i].Kcal > 0)
+      this.barChartDataAvg[0].data.push(datas[i].Kcal / datas[i].Temps);
     }
-    console.log('#################' + this.barChartData);
-
-    console.log('################# updateChart END');
   }
 
-  ///////////////// BAR CHART : END
+  announceSortChange(sortState: Sort) {
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared');
+    }
+  }
 }
